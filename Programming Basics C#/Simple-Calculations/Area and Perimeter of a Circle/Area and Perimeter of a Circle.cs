@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Area_and_Perimeter_of_a_Circle
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Въведете радиуса на окръжността ");
+            var r = double.Parse(Console.ReadLine());
+            var per = 2 * Math.PI * r;
+            var area = Math.PI * r * r;
+            Console.WriteLine($"Периметърът на кръга е {per}");
+            Console.WriteLine($"Лицето на кръга е {area}");
+        }
+    }
+}
