@@ -21,7 +21,6 @@ namespace Thea_the_Photographer
             var result = ftime + utime;
             
             TimeSpan res = TimeSpan.FromSeconds(result);
-            //string str = res.ToString(@"d\:hh\:mm\:ss");
             Console.WriteLine(res.ToString(@"d\:hh\:mm\:ss"));
         }
     }
