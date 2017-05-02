@@ -10,9 +10,8 @@ namespace Greeting
     {
         static void Main(string[] args)
         {
-            Console.Write("Въведете името си ");
             var name = Console.ReadLine();
-            Console.WriteLine($"Здравей, {name}!!!");
+            Console.WriteLine($"Hello, {name}!");
 
         }
     }

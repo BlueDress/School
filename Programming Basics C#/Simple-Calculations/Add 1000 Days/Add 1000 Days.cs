@@ -19,7 +19,22 @@ namespace Add_1000_Days
             var day = resultingdate.Day;
             var month = resultingdate.Month;
             var year = resultingdate.Year;
-            Console.WriteLine($"{day}-{month}-{year}");
+            if (day < 10 && month < 10)
+            {
+                Console.WriteLine($"0{day}-0{month}-{year}");
+            }
+            else if (day < 10 && month >= 10)
+            {
+                Console.WriteLine($"0{day}-{month}-{year}");
+            }
+            else if (day >= 10 && month < 10)
+            {
+                Console.WriteLine($"{day}-0{month}-{year}");
+            }
+            else
+            {
+                Console.WriteLine($"{day}-{month}-{year}");
+            }
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Inch_to_cm
             Console.Write("Въведете дължина в инчове ");
             var a = double.Parse(Console.ReadLine());
             var result = a * 2.54;
-            Console.WriteLine($"{a} инча са равни на {result} сантиметра");
+            Console.WriteLine(result);
         }
     }
 }

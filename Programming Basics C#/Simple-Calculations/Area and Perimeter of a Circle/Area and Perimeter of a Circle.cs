@@ -10,12 +10,12 @@ namespace Area_and_Perimeter_of_a_Circle
     {
         static void Main(string[] args)
         {
-            Console.Write("Въведете радиуса на окръжността ");
+           // Console.Write("Въведете радиуса на окръжността ");
             var r = double.Parse(Console.ReadLine());
             var per = 2 * Math.PI * r;
             var area = Math.PI * r * r;
-            Console.WriteLine($"Периметърът на кръга е {per}");
-            Console.WriteLine($"Лицето на кръга е {area}");
+            Console.WriteLine(Math.Round(area,4));
+            Console.WriteLine(Math.Round(per,4));
         }
     }
 }

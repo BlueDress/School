@@ -10,10 +10,10 @@ namespace Celsius_to_Fahrenhait
     {
         static void Main(string[] args)
         {
-            Console.Write("Въведи градуси по Целзии ");
+          //  Console.Write("Въведи градуси по Целзии ");
             var c = double.Parse(Console.ReadLine());
             var f = c * 1.8 + 32;
-            Console.WriteLine($"{c} градуса по Целзии са {Math.Round(f, 2)} градуса по Фаренхайт");
+            Console.WriteLine(Math.Round(f, 2));
         }
     }
 }
