@@ -16,6 +16,9 @@ namespace Equal_couples_of_numbers
             var checkmin = int.MaxValue;
             var checkmax = int.MinValue;
             var sum = 0;
+            var previousSum = 0;
+            var difference = 0;
+            var maxDifference = 0;
 
             for (int i = 0; i < n; i++)
             {
@@ -28,11 +31,23 @@ namespace Equal_couples_of_numbers
                 sum = a + b;
                 if (sum > checkmax) checkmax = sum;
                 if (sum < checkmin) checkmin = sum;
+
+                if (i > 0)
+                {
+                    difference = Math.Abs(sum - previousSum);
+
+                    if (maxDifference < difference)
+                    {
+                        maxDifference = difference;
+                    }
+                }
+
+                previousSum = sum;
             }
             if (checkmax == checkmin)
                 Console.WriteLine($"Yes, value={checkmax}");
             else
-                Console.WriteLine($"No, maxdiff={checkmax - checkmin}");
+                Console.WriteLine($"No, maxdiff={maxDifference}");
         }
     }
 }

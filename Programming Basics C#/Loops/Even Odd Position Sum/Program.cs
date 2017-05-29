@@ -20,6 +20,7 @@ namespace Even_Odd_Position_Sum
             {
                 Console.Write("Въведи число ");
                 var num = int.Parse(Console.ReadLine());
+
                 if (i % 2 == 0)
                 {
                     sum1 = sum1 + num;

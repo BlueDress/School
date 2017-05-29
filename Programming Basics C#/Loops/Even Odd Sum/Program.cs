@@ -13,7 +13,7 @@ namespace Even_Odd_Sum
             Console.Write("Въведете брой чилса ");
             var n = int.Parse(Console.ReadLine());
 
-            var sum1= 0;
+            var sum1 = 0;
             var sum2 = 0;
 
             for (int i = 0; i < n; i++)
@@ -30,6 +30,7 @@ namespace Even_Odd_Sum
                     sum2 = sum2 + num;
                 }
             }
+
             if (sum1 == sum2)
             {
                 Console.WriteLine($"Yes, sum = {sum1}");
