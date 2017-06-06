@@ -26,7 +26,7 @@ namespace House
             }
             else
             {
-                for (int i = 1; i < n; i += 2)
+                for (int i = 1; i <= n; i += 2)
                 {
                     Console.WriteLine("{0}{1}{0}", new string('-', (n - i) / 2), new string('*', i));
                 }
