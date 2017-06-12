@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splinter Trip", "Splinter Trip\Splinter Trip.csproj", "{8500D89C-627C-4C3A-9FBC-6C12CC7BCB41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpyGram", "SpyGram\SpyGram.csproj", "{7EF1216A-B803-450A-8F5E-EB500B914CCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spyfer", "Spyfer\Spyfer.csproj", "{263C3770-D7DC-477A-8681-3A746FCC6286}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSA", "NSA\NSA.csproj", "{46FCFAEA-ACC2-4040-9154-C4CB4C22F7DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8500D89C-627C-4C3A-9FBC-6C12CC7BCB41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8500D89C-627C-4C3A-9FBC-6C12CC7BCB41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8500D89C-627C-4C3A-9FBC-6C12CC7BCB41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8500D89C-627C-4C3A-9FBC-6C12CC7BCB41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EF1216A-B803-450A-8F5E-EB500B914CCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF1216A-B803-450A-8F5E-EB500B914CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EF1216A-B803-450A-8F5E-EB500B914CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EF1216A-B803-450A-8F5E-EB500B914CCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{263C3770-D7DC-477A-8681-3A746FCC6286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{263C3770-D7DC-477A-8681-3A746FCC6286}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{263C3770-D7DC-477A-8681-3A746FCC6286}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{263C3770-D7DC-477A-8681-3A746FCC6286}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46FCFAEA-ACC2-4040-9154-C4CB4C22F7DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46FCFAEA-ACC2-4040-9154-C4CB4C22F7DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46FCFAEA-ACC2-4040-9154-C4CB4C22F7DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46FCFAEA-ACC2-4040-9154-C4CB4C22F7DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
