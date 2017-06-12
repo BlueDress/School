@@ -15,17 +15,24 @@ namespace Biggest_divisor
             Console.Write("Въведете число ");
             var b = int.Parse(Console.ReadLine());
 
-            var n = Math.Min(a, b);
+            var min = Math.Min(a, b);
+            var max = Math.Max(a, b);
 
-            while (n > 0)
+            do
             {
-                if (a % n == 0 && b % n == 0)
+                var reminder = max % min;
+
+                if (reminder == 0)
                 {
-                    Console.WriteLine(n);
+                    Console.WriteLine(min);
                     break;
                 }
-                else n--;
-            }
+                else
+                {
+                    max = min;
+                    min = reminder;
+                }
+            } while (true);
         }
     }
 }

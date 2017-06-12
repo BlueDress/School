@@ -10,27 +10,29 @@ namespace Even_number_check
     {
         static void Main(string[] args)
         {
-            Console.Write("Въведете число ");
-            try
+            while (true)
             {
-                var n = int.Parse(Console.ReadLine());
-                while (n % 2 != 0)
+                try
                 {
+                    Console.Write("Въведете число ");
+                    var n = int.Parse(Console.ReadLine());
+
+                    if (n % 2 == 0)
+                    {
+                        Console.WriteLine($"Even number entered: {n}");
+                        break;
+                    }
+
                     Console.WriteLine("The number is not even.");
                     Console.Write("Въведете число ");
                     n = int.Parse(Console.ReadLine());
-
                 }
-                if (n % 2 == 0)
+                catch
                 {
-                    Console.WriteLine($"Even number entered: {n}");
+                    Console.WriteLine("Invalid number!");
                 }
             }
-            catch 
-            {
-                Console.WriteLine("Invalid number!");
-            }
-            
+
         }
     }
 }
