@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic Box", "Generic Box\Generic Box.csproj", "{A224C188-EE8F-4260-AC51-01648C7F8A03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic Box of String", "Generic Box of String\Generic Box of String.csproj", "{F2B764A0-9C0B-4A3B-99A5-6D75F1B75581}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic Box of Integer", "Generic Box of Integer\Generic Box of Integer.csproj", "{01014CCF-E962-4CC4-90F8-6DBBD3820FED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic Swap Method Strings", "Generic Swap Method Strings\Generic Swap Method Strings.csproj", "{462B8589-DE1B-4DB6-9134-2FCEE0F5469A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic Swap Method Integers", "Generic Swap Method Integers\Generic Swap Method Integers.csproj", "{08C7A6C2-7439-40A7-8858-C4F3CDED3FA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic Count Method Strings", "Generic Count Method Strings\Generic Count Method Strings.csproj", "{5FDBF860-8552-44FE-8737-403C9AF5436E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic Count Method Doubles", "Generic Count Method Doubles\Generic Count Method Doubles.csproj", "{D000D836-7FCD-44F6-9065-2D5A06893E58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custom List", "Custom List\Custom List.csproj", "{CD2C1C87-B34A-487C-8141-CA5A739872AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custom List Sorter", "Custom List Sorter\Custom List Sorter.csproj", "{F83B54D8-5CD6-4912-84AF-D1906D0A9231}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuple", "Tuple\Tuple.csproj", "{67D625B8-38C4-434E-B759-ED37C3E41A7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threeuple", "Threeuple\Threeuple.csproj", "{F5A03CA5-8092-4050-A366-09E4B0D4AE2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A224C188-EE8F-4260-AC51-01648C7F8A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A224C188-EE8F-4260-AC51-01648C7F8A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A224C188-EE8F-4260-AC51-01648C7F8A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A224C188-EE8F-4260-AC51-01648C7F8A03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2B764A0-9C0B-4A3B-99A5-6D75F1B75581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2B764A0-9C0B-4A3B-99A5-6D75F1B75581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2B764A0-9C0B-4A3B-99A5-6D75F1B75581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2B764A0-9C0B-4A3B-99A5-6D75F1B75581}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01014CCF-E962-4CC4-90F8-6DBBD3820FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01014CCF-E962-4CC4-90F8-6DBBD3820FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01014CCF-E962-4CC4-90F8-6DBBD3820FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01014CCF-E962-4CC4-90F8-6DBBD3820FED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{462B8589-DE1B-4DB6-9134-2FCEE0F5469A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{462B8589-DE1B-4DB6-9134-2FCEE0F5469A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{462B8589-DE1B-4DB6-9134-2FCEE0F5469A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{462B8589-DE1B-4DB6-9134-2FCEE0F5469A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08C7A6C2-7439-40A7-8858-C4F3CDED3FA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08C7A6C2-7439-40A7-8858-C4F3CDED3FA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08C7A6C2-7439-40A7-8858-C4F3CDED3FA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08C7A6C2-7439-40A7-8858-C4F3CDED3FA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FDBF860-8552-44FE-8737-403C9AF5436E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FDBF860-8552-44FE-8737-403C9AF5436E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FDBF860-8552-44FE-8737-403C9AF5436E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FDBF860-8552-44FE-8737-403C9AF5436E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D000D836-7FCD-44F6-9065-2D5A06893E58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D000D836-7FCD-44F6-9065-2D5A06893E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D000D836-7FCD-44F6-9065-2D5A06893E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D000D836-7FCD-44F6-9065-2D5A06893E58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD2C1C87-B34A-487C-8141-CA5A739872AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD2C1C87-B34A-487C-8141-CA5A739872AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD2C1C87-B34A-487C-8141-CA5A739872AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD2C1C87-B34A-487C-8141-CA5A739872AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F83B54D8-5CD6-4912-84AF-D1906D0A9231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F83B54D8-5CD6-4912-84AF-D1906D0A9231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F83B54D8-5CD6-4912-84AF-D1906D0A9231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F83B54D8-5CD6-4912-84AF-D1906D0A9231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67D625B8-38C4-434E-B759-ED37C3E41A7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67D625B8-38C4-434E-B759-ED37C3E41A7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67D625B8-38C4-434E-B759-ED37C3E41A7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67D625B8-38C4-434E-B759-ED37C3E41A7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A03CA5-8092-4050-A366-09E4B0D4AE2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A03CA5-8092-4050-A366-09E4B0D4AE2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A03CA5-8092-4050-A366-09E4B0D4AE2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A03CA5-8092-4050-A366-09E4B0D4AE2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
