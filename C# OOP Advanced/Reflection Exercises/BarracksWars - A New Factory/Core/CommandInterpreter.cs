@@ -20,7 +20,7 @@ namespace BarracksWars___A_New_Factory.Core
         {
             string commandFullName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(commandName) + "Command";
 
-            var commandType = Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(t => t.Name == commandFullName);
+            var commandType = Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(t => t.Name.Equals(commandFullName));
 
             object[] commandParams =
             {
