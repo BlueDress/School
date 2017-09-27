@@ -1,0 +1,9 @@
+{
+  "name": "sum-three-numbers",
+  "version": "0.0.0",
+  "description": "Sum Three Numbers",
+  "main": "app.js",
+  "author": {
+    "name": "Beijar"
+  }
+}

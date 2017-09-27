@@ -1,0 +1,9 @@
+﻿{
+  "name": "string-of-numbers-1-n",
+  "version": "0.0.0",
+  "description": "String of Numbers 1…N",
+  "main": "app.js",
+  "author": {
+    "name": "Beijar"
+  }
+}
