@@ -1,0 +1,9 @@
+{
+  "name": "fruit-or-vegetable",
+  "version": "0.0.0",
+  "description": "Fruit or Vegetable",
+  "main": "app.js",
+  "author": {
+    "name": "Beijar"
+  }
+}

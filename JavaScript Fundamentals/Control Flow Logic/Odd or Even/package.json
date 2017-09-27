@@ -1,0 +1,9 @@
+{
+  "name": "odd-or-even",
+  "version": "0.0.0",
+  "description": "Odd or Even",
+  "main": "app.js",
+  "author": {
+    "name": "Beijar"
+  }
+}

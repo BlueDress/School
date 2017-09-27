@@ -1,0 +1,9 @@
+{
+  "name": "colorful-numbers",
+  "version": "0.0.0",
+  "description": "Colorful Numbers",
+  "main": "app.js",
+  "author": {
+    "name": "Beijar"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "triangle-area",
+  "version": "0.0.0",
+  "description": "Triangle Area",
+  "main": "app.js",
+  "author": {
+    "name": "Beijar"
+  }
+}

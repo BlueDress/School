@@ -1,0 +1,9 @@
+{
+  "name": "prime-number-checker",
+  "version": "0.0.0",
+  "description": "Prime Number Checker",
+  "main": "app.js",
+  "author": {
+    "name": "Beijar"
+  }
+}
