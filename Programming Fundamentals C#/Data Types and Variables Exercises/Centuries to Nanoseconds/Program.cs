@@ -19,7 +19,7 @@ namespace Centuries_to_Nanoseconds
             long s = m * 60;
             BigInteger mil = s * 1000;
             BigInteger mic = mil * 1000;
-            BigInteger n = mil * 1000;
+            BigInteger n = mil * 1000000;
 
             Console.WriteLine($"{c} centuries = {y} years = {d} days = {h} hours = {m} minutes = {s} seconds = {mil} milliseconds = {mic} microseconds = {n} nanoseconds");
         }

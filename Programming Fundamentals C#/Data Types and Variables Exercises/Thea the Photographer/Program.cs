@@ -19,7 +19,7 @@ namespace Thea_the_Photographer
             var good = Math.Ceiling(ff / 100 * n);
             var utime = good * ut;
             var result = ftime + utime;
-            
+
             TimeSpan res = TimeSpan.FromSeconds(result);
             Console.WriteLine(res.ToString(@"d\:hh\:mm\:ss"));
         }
