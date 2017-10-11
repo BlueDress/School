@@ -8,7 +8,7 @@ namespace Primes_in_Given_Range
 {
     class Program
     {
-        public static void PrimeCheck(int n)
+        public static int PrimeCheck(int n)
         {
             var sum = 0;
 
@@ -19,14 +19,30 @@ namespace Primes_in_Given_Range
                     sum++;
                 }
             }
-            if (sum == 1 && n > 1) Console.Write(n + ", ");
+            if (sum == 1 && n > 1)
+            {
+                return n;
+            }
+            else
+            {
+                return -1;
+            }
         }
         public static void FindPrimesInRange(int startNum, int endNum)
         {
+            var result = new List<int>();
+
             for (int i = startNum; i <= endNum; i++)
             {
-                PrimeCheck(i);
+                var number = PrimeCheck(i);
+
+                if (number > -1)
+                {
+                    result.Add(number);
+                }
             }
+
+            Console.WriteLine(string.Join(", ", result));
         }
         static void Main(string[] args)
         {

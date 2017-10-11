@@ -8,7 +8,7 @@ namespace English_Name_оf_The_Last_Digit
 {
     class Program
     {
-        public static void NameOfLastDigit(int number)
+        public static void NameOfLastDigit(long number)
         {
             string result = "";
             switch (number % 10)
@@ -28,7 +28,13 @@ namespace English_Name_оf_The_Last_Digit
         }
         static void Main(string[] args)
         {
-            var number = int.Parse(Console.ReadLine());
+            var number = long.Parse(Console.ReadLine());
+
+            if (number < 0)
+            {
+                number = number * (-1);
+            }
+
             NameOfLastDigit(number);
         }
     }

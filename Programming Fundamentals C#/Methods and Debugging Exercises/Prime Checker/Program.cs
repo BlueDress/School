@@ -8,7 +8,7 @@ namespace Prime_Checker
 {
     class Program
     {
-        public static bool PrimeCheck(int n)
+        public static bool PrimeCheck(long n)
         {
             var sum = 0;
 
@@ -24,7 +24,7 @@ namespace Prime_Checker
         }
         static void Main(string[] args)
         {
-            var number = int.Parse(Console.ReadLine());
+            var number = long.Parse(Console.ReadLine());
             Console.WriteLine(PrimeCheck(number));
         }
     }

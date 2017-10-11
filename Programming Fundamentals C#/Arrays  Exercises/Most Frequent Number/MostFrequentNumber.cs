@@ -7,17 +7,17 @@ namespace Most_Frequent_Number
     {
         static void Main()
         {
-            int[] Input = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            int[] input = Console.ReadLine().Split().Select(int.Parse).ToArray();
 
             var maxSequence = 0;
-            var element = 0;
+            var element = input[0];
 
-            for (int currentElement = 0; currentElement < Input.Length; currentElement++)
+            for (int currentElement = 0; currentElement < input.Length; currentElement++)
             {
                 var counter = 1;
-                for (int nextElement = currentElement; nextElement < Input.Length - 1; nextElement++)
+                for (int nextElement = currentElement; nextElement < input.Length - 1; nextElement++)
                 {
-                    if (Input[nextElement] == Input[nextElement + 1])
+                    if (input[currentElement] == input[nextElement + 1])
                     {
                         counter++;
                     }
@@ -25,7 +25,7 @@ namespace Most_Frequent_Number
                 if (counter > maxSequence)
                 {
                     maxSequence = counter;
-                    element = Input[currentElement];
+                    element = input[currentElement];
                 }
             }
             Console.WriteLine(element);

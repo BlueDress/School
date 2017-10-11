@@ -8,12 +8,12 @@ namespace Cube_Properties
 {
     class Program
     {
-        public static void CubeProperties(int side, string property)
+        public static void CubeProperties(double side, string property)
         {
             var face = side * Math.Sqrt(2);
             var space = side * Math.Sqrt(3);
             var volume = side * side * side;
-            var area = side * side;
+            var area = side * side * 6;
             if (property == "face") Console.WriteLine(Math.Round(face, 2));
             else if (property == "space") Console.WriteLine(Math.Round(space, 2));
             else if (property == "volume") Console.WriteLine("{0:f2}", volume);
@@ -21,8 +21,8 @@ namespace Cube_Properties
         }
         static void Main(string[] args)
         {
-            var side = int.Parse(Console.ReadLine());
-            string property = Console.ReadLine();
+            var side = double.Parse(Console.ReadLine());
+            string property = Console.ReadLine().ToLower();
             CubeProperties(side, property);
         }
     }

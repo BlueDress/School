@@ -6,24 +6,24 @@ namespace Sieve_of_Eratosthenes
     {
         static void Main()
         {
-            var n = int.Parse(Console.ReadLine());
-            bool[] Primes = new bool[n];
+            var n = long.Parse(Console.ReadLine());
+            bool[] primes = new bool[n + 1];
 
-            for (int i = 0; i < Primes.Length; i++)
+            for (long i = 0; i < primes.Length; i++)
             {
-                Primes[i] = true;
+                primes[i] = true;
             }
 
-            Primes[0] = Primes[1] = false;
+            primes[0] = primes[1] = false;
 
-            for (int i = 0; i < Primes.Length; i++)
+            for (long i = 2; i <= n; i++)
             {
-                if (Primes[i] == true)
+                if (primes[i])
                 {
                     Console.Write(i + " ");
-                    for (int j = 1; j * i < Primes.Length; j++)
+                    for (long j = 1; j * i <= n; j++)
                     {
-                        Primes[j * i] = false;
+                        primes[j * i] = false;
                     }
                 }
             }

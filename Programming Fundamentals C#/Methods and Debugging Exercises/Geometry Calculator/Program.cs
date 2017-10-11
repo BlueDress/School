@@ -12,29 +12,29 @@ namespace Geometry_Calculator
         {
             if (figureType == "triangle")
             {
-                var side = int.Parse(Console.ReadLine());
-                var height = int.Parse(Console.ReadLine());
+                var side = double.Parse(Console.ReadLine());
+                var height = double.Parse(Console.ReadLine());
                 var area = side * height / 2;
-                Console.WriteLine(area);
+                Console.WriteLine($"{area:f2}");
             }
             else if (figureType == "rectangle")
             {
-                var side = int.Parse(Console.ReadLine());
-                var height = int.Parse(Console.ReadLine());
+                var side = double.Parse(Console.ReadLine());
+                var height = double.Parse(Console.ReadLine());
                 var area = side * height;
-                Console.WriteLine(area);
+                Console.WriteLine($"{area:f2}");
             }
             else if (figureType == "square")
             {
-                var side = int.Parse(Console.ReadLine());
+                var side = double.Parse(Console.ReadLine());
                 var area = side * side;
-                Console.WriteLine(area);
+                Console.WriteLine($"{area:f2}");
             }
             else if (figureType == "circle")
             {
-                var side = int.Parse(Console.ReadLine());
+                var side = double.Parse(Console.ReadLine());
                 var area = side * side * Math.PI;
-                Console.WriteLine(area);
+                Console.WriteLine($"{area:f2}");
             }
         }
         static void Main(string[] args)

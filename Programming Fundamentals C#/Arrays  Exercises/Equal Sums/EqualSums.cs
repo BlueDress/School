@@ -33,7 +33,7 @@ namespace Equal_Sums
             }
             if (noSuchElement)
             {
-                Console.WriteLine("No");
+                Console.WriteLine("no");
             }
             Console.WriteLine();
         }

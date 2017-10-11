@@ -33,7 +33,7 @@ namespace Max_Sequence_of_Increasing_Elements
             }
             for (int i = element; i < element + maxSequence; i++)
             {
-                Console.Write(string.Join(" ", Input[i]));
+                Console.Write(Input[i] + " ");
             }
             Console.WriteLine();
         }

@@ -67,7 +67,6 @@ namespace Master_Numbers
                     Console.WriteLine(i);
                 }
             }
-             
         }
     }
 }

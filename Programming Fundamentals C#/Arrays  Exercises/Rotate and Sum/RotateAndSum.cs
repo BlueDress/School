@@ -7,36 +7,26 @@ namespace Rotate_and_Sum
     {
         static void Main()
         {
-            int[] Input = Console.ReadLine().Split().Select(int.Parse).ToArray();
-            var k = int.Parse(Console.ReadLine());
+            var input = Console.ReadLine().Split().Select(long.Parse).ToArray();
+            var numberOfRotations = int.Parse(Console.ReadLine());
 
-            int[] Sum = new int[Input.Length];
-            int[] Rotated = new int[Input.Length];
-            Rotated[0] = Input[Input.Length - 1];
+            var sum = new long[input.Length];
 
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < numberOfRotations; i++)
             {
-                for (int j = 1; j < Rotated.Length; j++)
+                var lastElement = input[input.Length - 1];
+
+                for (int j = input.Length - 1; j > 0; j--)
                 {
-                    Rotated[j] = Input[j - 1];
-                    Sum[j] = Rotated[j];
+                    input[j] = input[j - 1];
+                    sum[j] += input[j];
                 }
-                Sum[0] = Rotated[0];
+
+                input[0] = lastElement;
+                sum[0] += input[0];
             }
 
-            for (int i = 1; i < k; i++)
-            {
-                for (int j = i; j < Rotated.Length; j++)
-                {
-                    Sum[j] = Sum[j] + Rotated[j - i];
-                }
-                for (int p = 1; p < i; p++)
-                {
-                    Sum[p] = Sum[p] + Rotated[Rotated.Length - p];
-                }
-                Sum[0] = Rotated[Rotated.Length - i] + Sum[0];
-            }
-            Console.WriteLine(string.Join(" ", Sum));
+            Console.WriteLine(string.Join(" ", sum));
         }
     }
 }

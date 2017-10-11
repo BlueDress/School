@@ -10,6 +10,12 @@ namespace Fibonacci_Numbers
     {
         public static void Fib(int n)
         {
+            if (n == 0)
+            {
+                Console.WriteLine(n + 1);
+                return;
+            }
+
             var a = 0;
             var b = 1;
             var sum = 0;
