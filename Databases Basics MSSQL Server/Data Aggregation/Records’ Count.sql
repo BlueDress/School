@@ -1,0 +1,1 @@
+select count(Id) as Count from WizzardDeposits
