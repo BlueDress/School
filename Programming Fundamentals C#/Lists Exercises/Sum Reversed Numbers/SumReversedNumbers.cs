@@ -24,13 +24,8 @@ namespace Sum_Reversed_Numbers
                 }
                 inputList[item] = sum;
             }
-
-            for (int item = 0; item < inputList.Count; item++)
-            {
-                inputList[0] = inputList[0] + inputList[1];
-                inputList.RemoveAt(1);
-            }
-            Console.WriteLine(inputList[0]);
+            
+            Console.WriteLine(inputList.Sum());
         }
     }
 }

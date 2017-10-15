@@ -54,9 +54,9 @@ namespace Dragon_Army
                 {
                     typeDragonsStats[type][name] = new List<int>();
                 }
-                typeDragonsStats[type][name].Add(damage);
-                typeDragonsStats[type][name].Add(health);
-                typeDragonsStats[type][name].Add(armor);
+                typeDragonsStats[type][name].Insert(0, damage);
+                typeDragonsStats[type][name].Insert(1, health);
+                typeDragonsStats[type][name].Insert(2, armor);
             }
 
             double damageAverage = 0;

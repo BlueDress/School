@@ -8,8 +8,8 @@ namespace Population_Counter
     {
         public static void Main()
         {
-            var countryPopulation = new Dictionary<string, int>();
-            var countryCityPopulation = new Dictionary<string, Dictionary<string, int>>();
+            var countryPopulation = new Dictionary<string, long>();
+            var countryCityPopulation = new Dictionary<string, Dictionary<string, long>>();
 
             while (true)
             {
@@ -32,7 +32,7 @@ namespace Population_Counter
 
                     if (!countryCityPopulation.ContainsKey(country))
                     {
-                        countryCityPopulation[country] = new Dictionary<string, int>();
+                        countryCityPopulation[country] = new Dictionary<string, long>();
                     }
                     if (!countryCityPopulation[country].ContainsKey(city))
                     {

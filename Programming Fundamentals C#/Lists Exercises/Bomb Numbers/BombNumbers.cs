@@ -43,24 +43,12 @@ namespace Bomb_Numbers
                             inputNumbers.RemoveAt(i);
                         }
                     }
+
+                    item = -1;
                 }
             }
-            // Console.WriteLine(inputNumbers.Sum());
 
-            // for (int item = 0; item < inputNumbers.Count; item++)
-            // {
-            //     inputNumbers[0] = inputNumbers[0] + inputNumbers[1];
-            //     inputNumbers.RemoveAt(1);
-            // }
-            // Console.WriteLine(inputNumbers[0]);
-
-            var sum = 0;
-
-            for (int item = 0; item < inputNumbers.Count; item++)
-            {
-                sum += inputNumbers[item];
-            }
-            Console.WriteLine(sum);
+            Console.WriteLine(inputNumbers.Sum());
         }
     }
 }

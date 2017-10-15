@@ -46,7 +46,15 @@ namespace Longest_Increasing_Subsequence
                 lastIndex = prev[lastIndex];
             }
             output.Reverse();
-            Console.WriteLine(string.Join(" ", output));
+
+            if (output.Count > 0)
+            {
+                Console.WriteLine(string.Join(" ", output));
+            }
+            else
+            {
+                Console.WriteLine(input[0]);
+            }
         }
     }
 }
