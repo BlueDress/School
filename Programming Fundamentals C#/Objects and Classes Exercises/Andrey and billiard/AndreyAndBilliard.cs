@@ -27,19 +27,39 @@ namespace Andrey_and_billiard
                 {
                     break;
                 }
+
+                var clientName = inputCommands[0];
+                var entity = inputCommands[1];
+                var quantity = int.Parse(inputCommands[2]);
+
+                if (!entities.ContainsKey(entity))
+                {
+                    continue;
+                }
+
+                if (!billInformation.Any(x => x.Name.Equals(clientName)))
+                {
+                    var client = new Client(clientName);
+
+                    if (!client.Orders.ContainsKey(entity))
+                    {
+                        client.Orders[entity] = 0;
+                    }
+
+                    client.Orders[entity] += quantity;
+
+                    billInformation.Add(client);
+                }
                 else
                 {
-                    if (entities.ContainsKey(inputCommands[1]))
+                    var currentClient = billInformation.First(x => x.Name.Equals(clientName));
+
+                    if (!currentClient.Orders.ContainsKey(entity))
                     {
-                        var newClient = new Client
-                        {
-                            Name = inputCommands[0],
-                            Order = inputCommands[1],
-                            Quantity = int.Parse(inputCommands[2]),
-                            Bill = int.Parse(inputCommands[2]) * entities[inputCommands[1]]
-                        };
-                        billInformation.Add(newClient);
+                        currentClient.Orders[entity] = 0;
                     }
+
+                    currentClient.Orders[entity] += quantity;
                 }
             }
 
@@ -47,9 +67,18 @@ namespace Andrey_and_billiard
 
             foreach (var client in billInformation.OrderBy(x => x.Name))
             {
-                Console.WriteLine($"{client.Name}\n-- {client.Order} - {client.Quantity}\nBill: {client.Bill:f2}");
-                totalBill += client.Bill;
+                Console.WriteLine($"{client.Name}");
+
+                foreach (var item in client.Orders)
+                {
+                    Console.WriteLine($"-- {item.Key} - {item.Value}");
+                }
+
+                Console.WriteLine($"Bill: {client.GetBill(entities):f2}");
+
+                totalBill += client.GetBill(entities);
             }
+
             Console.WriteLine($"Total bill: {totalBill:f2}");
         }
     }

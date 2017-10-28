@@ -12,7 +12,7 @@ namespace Intersection_of_Circles
 
         public static bool AreIntersecting(Circle firstCircle, Circle secondCircle)
         {
-            if (DistanceBetweenPoints(firstCircle.Center, secondCircle.Center) < firstCircle.Radius + secondCircle.Radius)
+            if (DistanceBetweenPoints(firstCircle.Center, secondCircle.Center) <= firstCircle.Radius + secondCircle.Radius)
             {
                 return true;
             }
@@ -45,7 +45,7 @@ namespace Intersection_of_Circles
                 }
             };
 
-            if (AreIntersecting(firstCircle, secondCircle) == true)
+            if (AreIntersecting(firstCircle, secondCircle))
             {
                 Console.WriteLine("Yes");
             }

@@ -32,7 +32,6 @@ namespace Mentor_group
 
                         if (inputCommands.Count > 1)
                         {
-
                             for (int i = 1; i < inputCommands.Count; i++)
                             {
                                 dates.Add(DateTime.ParseExact(inputCommands[i], "dd/MM/yyyy", CultureInfo.InvariantCulture));
@@ -40,7 +39,7 @@ namespace Mentor_group
                         }
                         newStudent.Dates = dates;
 
-                        var comments = new List<string>() { string.Empty };
+                        var comments = new List<string>();
                         newStudent.Comments = comments;
                         report.Add(newStudent);
                     }
@@ -74,8 +73,6 @@ namespace Mentor_group
                     {
                         var addComment = report.First(x => x.Name == inputCommands[0]);
 
-                        addComment.Comments.RemoveAt(0);
-
                         for (int i = 1; i < inputCommands.Count; i++)
                         {
                             addComment.Comments.Add(inputCommands[i]);
@@ -92,10 +89,7 @@ namespace Mentor_group
 
                 foreach (var comment in student.Comments)
                 {
-                    if (comment != string.Empty)
-                    {
-                        Console.WriteLine($"- {comment}");
-                    }
+                    Console.WriteLine($"- {comment}");
                 }
 
                 Console.WriteLine("Dates attended:");
