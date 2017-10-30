@@ -21,7 +21,7 @@ namespace Use_Your_Chains__Buddy
             {
                 var code = Regex.Replace(match.ToString(), @"[A-Z_\W]+", " ");
                 code = Regex.Replace(code, @"\s+", " ").Trim();
-                codes.Add(code); 
+                codes.Add(code);
             }
 
             var decryptedCodes = new List<string>();
@@ -43,7 +43,11 @@ namespace Use_Your_Chains__Buddy
                 }
 
                 var decryptedCode = string.Join("", codeToArray);
-                decryptedCodes.Add(decryptedCode);
+
+                if (!decryptedCode.Equals(string.Empty))
+                {
+                    decryptedCodes.Add(decryptedCode);
+                }
             }
 
             Console.WriteLine(string.Join(" ", decryptedCodes));

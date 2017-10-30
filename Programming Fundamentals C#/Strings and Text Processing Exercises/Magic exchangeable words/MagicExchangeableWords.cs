@@ -25,7 +25,7 @@ namespace Magic_exchangeable_words
         {
             var input = Console.ReadLine().Split();
 
-            var result = AreWordsMagic(input[0], input[1]);
+            var result = AreWordsMagic(input[0], input[1]).ToString().ToLower();
 
             Console.WriteLine(result);
         }

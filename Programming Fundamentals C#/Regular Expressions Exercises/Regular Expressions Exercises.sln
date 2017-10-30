@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Query Mess", "Query Mess\Qu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Use your chains buddy", "Use your chains buddy\Use your chains buddy.csproj", "{C1B3A583-7CA3-45A6-B11D-656C7B197931}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camera View", "Camera View\Camera View.csproj", "{36DB78DB-8C31-4AA9-A7F6-67E9C761A981}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather", "Weather\Weather.csproj", "{95A7C586-0199-4482-B519-4D45EB7A3517}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Key Replacer", "Key Replacer\Key Replacer.csproj", "{2DEF451A-45E9-418E-8F68-D2E6EAF76C51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +45,18 @@ Global
 		{C1B3A583-7CA3-45A6-B11D-656C7B197931}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1B3A583-7CA3-45A6-B11D-656C7B197931}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1B3A583-7CA3-45A6-B11D-656C7B197931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36DB78DB-8C31-4AA9-A7F6-67E9C761A981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36DB78DB-8C31-4AA9-A7F6-67E9C761A981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36DB78DB-8C31-4AA9-A7F6-67E9C761A981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36DB78DB-8C31-4AA9-A7F6-67E9C761A981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95A7C586-0199-4482-B519-4D45EB7A3517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95A7C586-0199-4482-B519-4D45EB7A3517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95A7C586-0199-4482-B519-4D45EB7A3517}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95A7C586-0199-4482-B519-4D45EB7A3517}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DEF451A-45E9-418E-8F68-D2E6EAF76C51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DEF451A-45E9-418E-8F68-D2E6EAF76C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DEF451A-45E9-418E-8F68-D2E6EAF76C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DEF451A-45E9-418E-8F68-D2E6EAF76C51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

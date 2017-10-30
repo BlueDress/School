@@ -7,8 +7,22 @@ namespace Sum_big_numbers
     {
         public static void Main()
         {
-            var firstString = Console.ReadLine().TrimStart('0');
-            var secondString = Console.ReadLine().TrimStart('0');
+            var firstInputString = Console.ReadLine().TrimStart('0');
+            var secondInputString = Console.ReadLine().TrimStart('0');
+
+            var firstString = string.Empty;
+            var secondString = string.Empty;
+
+            if (firstInputString.Length >= secondInputString.Length)
+            {
+                firstString = firstInputString;
+                secondString = secondInputString;
+            }
+            else
+            {
+                firstString = secondInputString;
+                secondString = firstInputString;
+            }
 
             var sb = new StringBuilder();
             var toAdd = 0;
