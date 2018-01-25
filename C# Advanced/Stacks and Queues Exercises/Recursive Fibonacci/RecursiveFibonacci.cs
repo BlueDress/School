@@ -4,17 +4,17 @@ namespace Recursive_Fibonacci
 {
     public class RecursiveFibonacci
     {
-        private static int[] numbers;
+        private static long[] numbers;
 
         public static void Main()
         {
-            var nthNumber = int.Parse(Console.ReadLine());
-            numbers = new int[nthNumber];
+            var nthNumber = long.Parse(Console.ReadLine());
+            numbers = new long[nthNumber];
             var result = GetFibonacciNumber(nthNumber);
             Console.WriteLine(result);
         }
 
-        private static int GetFibonacciNumber(int nthNumber)
+        private static long GetFibonacciNumber(long nthNumber)
         {
             if (nthNumber <= 2)
             {

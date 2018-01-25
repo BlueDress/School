@@ -8,13 +8,11 @@ namespace Reverse_Numbers_with_a_Stack
     {
         public static void Main()
         {
-            var inputNumbers = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            var inputNumbers = Console.ReadLine().Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
 
             var numbers = new Stack<int>(inputNumbers);
 
-            var reversedInput = numbers.ToArray();
-
-            Console.WriteLine(string.Join(" ", reversedInput));
+            Console.WriteLine(string.Join(" ", numbers));
         }
     }
 }

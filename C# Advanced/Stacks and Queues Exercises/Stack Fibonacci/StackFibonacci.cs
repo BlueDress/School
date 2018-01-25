@@ -7,8 +7,8 @@ namespace Stack_Fibonacci
     {
         public static void Main()
         {
-            var nthNumber = int.Parse(Console.ReadLine());
-            var numbers = new Stack<int>();
+            var nthNumber = long.Parse(Console.ReadLine());
+            var numbers = new Stack<long>();
 
             numbers.Push(1);
             numbers.Push(1);

@@ -8,14 +8,14 @@ namespace Truck_Tour
     {
         public static void Main()
         {
-            var numberOfPumps = int.Parse(Console.ReadLine());
+            var numberOfPumps = long.Parse(Console.ReadLine());
 
-            var litresPerPump = new Queue<int>();
-            var distancesToNextPupm = new Queue<int>();
+            var litresPerPump = new Queue<long>();
+            var distancesToNextPupm = new Queue<long>();
 
             for (int i = 0; i < numberOfPumps; i++)
             {
-                var litresDistances = Console.ReadLine().Split().Select(int.Parse).ToArray();
+                var litresDistances = Console.ReadLine().Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(long.Parse).ToArray();
 
                 litresPerPump.Enqueue(litresDistances[0]);
                 distancesToNextPupm.Enqueue(litresDistances[1]);
@@ -28,7 +28,7 @@ namespace Truck_Tour
 
             for (int i = 0; i < numberOfPumps; i++)
             {
-                var petrolLeft = 0;
+                var petrolLeft = 0L;
 
                 for (int j = 0; j < numberOfPumps; j++)
                 {
@@ -46,10 +46,13 @@ namespace Truck_Tour
                     }
                     else
                     {
-                        litresPerPump.Enqueue(litresPerPump.Dequeue());
-                        litres = litresPerPump.Peek();
-                        distancesToNextPupm.Enqueue(distancesToNextPupm.Dequeue());
-                        distance = distancesToNextPupm.Peek();
+                        for (int k = 0; k < numberOfPumps + 1 - j; k++)
+                        {
+                            litresPerPump.Enqueue(litresPerPump.Dequeue());
+                            litres = litresPerPump.Peek();
+                            distancesToNextPupm.Enqueue(distancesToNextPupm.Dequeue());
+                            distance = distancesToNextPupm.Peek();
+                        }
 
                         canGoAround = false;
                         break;

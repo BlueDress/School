@@ -7,10 +7,10 @@ namespace Calculate_Sequence_with_Queue
     {
         public static void Main()
         {
-            var firstElement = int.Parse(Console.ReadLine());
+            var firstElement = long.Parse(Console.ReadLine());
 
-            var temporaryQueue = new Queue<int>();
-            var queueToPrint = new Queue<int>();
+            var temporaryQueue = new Queue<long>();
+            var queueToPrint = new Queue<long>();
 
             temporaryQueue.Enqueue(firstElement);
 
@@ -22,14 +22,7 @@ namespace Calculate_Sequence_with_Queue
                 queueToPrint.Enqueue(temporaryQueue.Dequeue());
             }
 
-            var result = new List<int>();
-
-            for (int i = 0; i < 50; i++)
-            {
-                result.Add(queueToPrint.Dequeue());
-            }
-
-            Console.WriteLine(string.Join(" ", result));
+            Console.WriteLine(string.Join(" ", queueToPrint));
         }
     }
 }

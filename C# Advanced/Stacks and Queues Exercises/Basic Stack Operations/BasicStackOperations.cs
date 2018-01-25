@@ -8,13 +8,13 @@ namespace Basic_Stack_Operations
     {
         public static void Main()
         {
-            var commands = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            var commands = Console.ReadLine().Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
 
             var elementsToPush = commands[0];
             var elementsToPop = commands[1];
             var elementToCheck = commands[2];
 
-            var inputNumbers = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            var inputNumbers = Console.ReadLine().Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
 
             var numbers = new Stack<int>();
 
@@ -34,6 +34,7 @@ namespace Basic_Stack_Operations
                     break;
                 }
             }
+
             if (numbers.Count == 0)
             {
                 Console.WriteLine(0);

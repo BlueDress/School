@@ -17,7 +17,7 @@ namespace Maximum_Element
 
             for (int i = 0; i < numberOfCommands; i++)
             {
-                var commands = Console.ReadLine().Split();
+                var commands = Console.ReadLine().Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
 
                 var typeOfCommand = commands[0];
 
