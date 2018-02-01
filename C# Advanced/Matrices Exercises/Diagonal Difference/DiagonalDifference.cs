@@ -13,7 +13,7 @@ namespace Diagonal_Difference
 
             for (int row = 0; row < matrix.Length; row++)
             {
-                matrix[row] = Console.ReadLine().Split().Select(int.Parse).ToArray();
+                matrix[row] = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
             }
 
             var leftDiagonalSum = 0;

@@ -55,7 +55,7 @@ namespace Rubik_s_Matrix
                                     matrix[rowSwap][colSwap] = matrix[row][col];
                                     matrix[row][col] = tempCell;
 
-                                    Console.WriteLine($"Swap ({row},{col}) with ({rowSwap},{colSwap})");
+                                    Console.WriteLine($"Swap ({row}, {col}) with ({rowSwap}, {colSwap})");
                                 }
                             }
                         }
@@ -67,7 +67,7 @@ namespace Rubik_s_Matrix
 
         private static int[][] ShufflingMatrix(int[][] matrix, string commands)
         {
-            var tokens = commands.Split();
+            var tokens = commands.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             var rowColNumber = int.Parse(tokens[0]);
             var direction = tokens[1];

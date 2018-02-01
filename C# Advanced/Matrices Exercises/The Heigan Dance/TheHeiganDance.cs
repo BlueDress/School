@@ -125,7 +125,7 @@ namespace The_Heigan_Dance
                 }
             }
 
-            Console.WriteLine($"Final position: {playerRow},{playerCol}");
+            Console.WriteLine($"Final position: {playerRow}, {playerCol}");
         }
     }
 }

@@ -1,0 +1,40 @@
+﻿@model AllCustomersModel
+
+@{
+    ViewData["Title"] = "Ordered Customers";
+}
+
+<h2>Customers ordered by @Model.OrderType.ToString()</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Birth Date
+            </th>
+            <th>
+                Is Young Driver
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model.Customers)
+        {
+            <tr>
+                <td>
+                    @customer.Name
+                </td>
+                <td>
+                    @customer.BirthDate
+                </td>
+                <td>
+                    @(customer.IsYoungDriver ? "Yes" : "No")
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

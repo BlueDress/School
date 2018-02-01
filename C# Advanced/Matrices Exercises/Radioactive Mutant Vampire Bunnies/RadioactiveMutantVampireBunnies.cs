@@ -8,7 +8,7 @@ namespace Radioactive_Mutant_Vampire_Bunnies
     {
         public static void Main()
         {
-            var dimensions = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            var dimensions = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
 
             var rows = dimensions[0];
             var cols = dimensions[1];
@@ -36,9 +36,11 @@ namespace Radioactive_Mutant_Vampire_Bunnies
 
                     if (lair[row][col].Equals('B'))
                     {
-                        var bunnyCell = new BunnyCell();
-                        bunnyCell.row = row;
-                        bunnyCell.col = col;
+                        var bunnyCell = new BunnyCell
+                        {
+                            row = row,
+                            col = col
+                        };
                         bunnyCells.Add(bunnyCell);
                     }
                 }
@@ -320,9 +322,11 @@ namespace Radioactive_Mutant_Vampire_Bunnies
                     {
                         if (lair[row][col].Equals('B'))
                         {
-                            var bunnyCell = new BunnyCell();
-                            bunnyCell.row = row;
-                            bunnyCell.col = col;
+                            var bunnyCell = new BunnyCell
+                            {
+                                row = row,
+                                col = col
+                            };
                             bunnyCells.Add(bunnyCell);
                         }
                     }

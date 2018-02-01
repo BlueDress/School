@@ -8,7 +8,7 @@ namespace Crossfire
     {
         public static void Main()
         {
-            var dimensions = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            var dimensions = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
 
             var rows = dimensions[0];
             var cols = dimensions[1];
@@ -46,7 +46,7 @@ namespace Crossfire
                         }
                     }
 
-                    var commands = input.Split().Select(int.Parse).ToArray();
+                    var commands = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
 
                     var row = commands[0];
                     var col = commands[1];

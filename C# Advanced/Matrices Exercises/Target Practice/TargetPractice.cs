@@ -8,7 +8,7 @@ namespace Target_Practice
     {
         public static void Main()
         {
-            var input = Console.ReadLine().Split();
+            var input = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             var rows = int.Parse(input[0]);
             var cols = int.Parse(input[1]);
 
@@ -24,7 +24,7 @@ namespace Target_Practice
 
                 if (direction.Equals("left"))
                 {
-                    for (int col = matrix[row].Length - 1; col  >= 0;  col --)
+                    for (int col = matrix[row].Length - 1; col >= 0; col--)
                     {
                         matrix[row][col] = snake[snakeCharIndex % snake.Length];
                         snakeCharIndex++;
@@ -44,7 +44,7 @@ namespace Target_Practice
                 }
             }
 
-            var shotParameters = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            var shotParameters = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
             var impactRow = shotParameters[0];
             var impactCol = shotParameters[1];
             var radius = shotParameters[2];
@@ -52,9 +52,9 @@ namespace Target_Practice
 
             for (int i = 0; i <= radius; i++)
             {
-                for (int row = impactRow; row <= impactRow + radius; row++)
+                for (int row = impactRow; row <= Math.Min(impactRow + radius, matrix.Length - 1); row++)
                 {
-                    for (int col = impactCol - radius + radiusDecline; col <= impactCol + radius - radiusDecline; col++)
+                    for (int col = Math.Max(impactCol - radius + radiusDecline, 0); col <= Math.Min(impactCol + radius - radiusDecline, cols - 1); col++)
                     {
                         matrix[row][col] = ' ';
                     }
@@ -67,9 +67,9 @@ namespace Target_Practice
 
             for (int i = 1; i <= radius; i++)
             {
-                for (int row = impactRow - 1; row >= impactRow - radius; row--)
+                for (int row = Math.Max(impactRow - 1, 0); row >= Math.Max(impactRow - radius, 0); row--)
                 {
-                    for (int col = impactCol - radius + radiusDecline; col <= impactCol + radius - radiusDecline; col++)
+                    for (int col = Math.Max(impactCol - radius + radiusDecline, 0); col <= Math.Min(impactCol + radius - radiusDecline, cols - 1); col++)
                     {
                         matrix[row][col] = ' ';
                     }
@@ -105,7 +105,7 @@ namespace Target_Practice
 
             foreach (var row in matrix)
             {
-                Console.WriteLine(string.Join(" ", row));
+                Console.WriteLine(string.Join("", row));
             }
         }
     }
