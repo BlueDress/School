@@ -13,6 +13,6 @@ namespace CarDealer.Data.Models
 
         public bool IsImporter { get; set; }
 
-        public ICollection<Part> Parts { get; set; }
+        public ICollection<Part> Parts { get; set; } = new List<Part>();
     }
 }

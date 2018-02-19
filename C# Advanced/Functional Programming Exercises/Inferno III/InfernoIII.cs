@@ -8,7 +8,7 @@ namespace Inferno_III
     {
         public static void Main()
         {
-            var gems = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            var gems = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(long.Parse).ToArray();
 
             var gemsStatus = new bool[gems.Length];
 
@@ -31,7 +31,7 @@ namespace Inferno_III
                 }
             }
 
-            var gemsToForge = new List<int>();
+            var gemsToForge = new List<long>();
 
             for (int i = 0; i < gems.Length; i++)
             {
@@ -44,9 +44,9 @@ namespace Inferno_III
             Console.WriteLine(string.Join(" ", gemsToForge));
         }
 
-        private static bool[] GemsPowersFilterModule(int[] gems, bool[] gemsStatus, string input)
+        private static bool[] GemsPowersFilterModule(long[] gems, bool[] gemsStatus, string input)
         {
-            var tokens = input.Split(';');
+            var tokens = input.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
 
             switch (tokens[0])
             {
@@ -61,9 +61,9 @@ namespace Inferno_III
             return gemsStatus;
         }
 
-        private static bool[] ReverseExclusions(int[] gems, bool[] gemsStatus, string filterType, string filterParameter)
+        private static bool[] ReverseExclusions(long[] gems, bool[] gemsStatus, string filterType, string filterParameter)
         {
-            var value = int.Parse(filterParameter);
+            var value = long.Parse(filterParameter);
 
             switch (filterType)
             {
@@ -96,21 +96,31 @@ namespace Inferno_III
                     }
                     break;
                 case "Sum Left Right":
-                    if (gems[0] + gems[1] == value)
+                    if (gems.Length > 1)
                     {
-                        gemsStatus[0] = true;
-                    }
-
-                    if (gems[gems.Length - 1] + gems[gems.Length - 2] == value)
-                    {
-                        gemsStatus[gems.Length - 1] = true;
-                    }
-
-                    for (int i = 1; i < gems.Length - 1; i++)
-                    {
-                        if (gems[i] + gems[i + 1] + gems[i - 1] == value)
+                        if (gems[0] + gems[1] == value)
                         {
-                            gemsStatus[i] = true;
+                            gemsStatus[0] = true;
+                        }
+
+                        if (gems[gems.Length - 1] + gems[gems.Length - 2] == value)
+                        {
+                            gemsStatus[gems.Length - 1] = true;
+                        }
+
+                        for (int i = 1; i < gems.Length - 1; i++)
+                        {
+                            if (gems[i] + gems[i + 1] + gems[i - 1] == value)
+                            {
+                                gemsStatus[i] = true;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (gems[0] == value)
+                        {
+                            gemsStatus[0] = true;
                         }
                     }
                     break;
@@ -118,9 +128,9 @@ namespace Inferno_III
             return gemsStatus;
         }
 
-        private static bool[] ExcludeGems(int[] gems, bool[] gemsStatus, string filterType, string filterParameter)
+        private static bool[] ExcludeGems(long[] gems, bool[] gemsStatus, string filterType, string filterParameter)
         {
-            var value = int.Parse(filterParameter);
+            var value = long.Parse(filterParameter);
 
             switch (filterType)
             {
@@ -153,21 +163,31 @@ namespace Inferno_III
                     }
                     break;
                 case "Sum Left Right":
-                    if (gems[0] + gems[1] == value)
+                    if (gems.Length > 1)
                     {
-                        gemsStatus[0] = false;
-                    }
-
-                    if (gems[gems.Length - 1] + gems[gems.Length - 2] == value)
-                    {
-                        gemsStatus[gems.Length - 1] = false;
-                    }
-
-                    for (int i = 1; i < gems.Length - 1; i++)
-                    {
-                        if (gems[i] + gems[i + 1] + gems[i - 1] == value)
+                        if (gems[0] + gems[1] == value)
                         {
-                            gemsStatus[i] = false;
+                            gemsStatus[0] = false;
+                        }
+
+                        if (gems[gems.Length - 1] + gems[gems.Length - 2] == value)
+                        {
+                            gemsStatus[gems.Length - 1] = false;
+                        }
+
+                        for (int i = 1; i < gems.Length - 1; i++)
+                        {
+                            if (gems[i] + gems[i + 1] + gems[i - 1] == value)
+                            {
+                                gemsStatus[i] = false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (gems[0] == value)
+                        {
+                            gemsStatus[0] = false;
                         }
                     }
                     break;

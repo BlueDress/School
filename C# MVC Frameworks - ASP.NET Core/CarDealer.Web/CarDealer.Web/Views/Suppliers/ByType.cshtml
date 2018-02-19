@@ -1,0 +1,44 @@
+﻿@model SuppliersByType
+
+@{
+    ViewData["Title"] = $"Suppliers";
+}
+
+<h2>@Model.SupplierType</h2>
+
+
+<div>
+    <a href="/suppliers/@(!Model.SupplierType.ToString().ToLower().Equals("local") ? "Local" : "Importers")" type="button" class="btn btn-primary">Show @(!Model.SupplierType.ToString().ToLower().Equals("local") ? "Local" : "Importers")</a>
+</div>
+<br />
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Number Of Parts
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var supplier in Model.Suppliers)
+            {
+            <tr>
+                <th>
+                    @supplier.Id
+                </th>
+                <th>
+                    @supplier.Name
+                </th>
+                <th>
+                    @supplier.NumberOfParts
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>

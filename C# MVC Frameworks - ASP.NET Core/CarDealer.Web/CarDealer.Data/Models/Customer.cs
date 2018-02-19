@@ -16,6 +16,6 @@ namespace CarDealer.Data.Models
 
         public bool IsYoungDriver { get; set; }
 
-        public ICollection<Sale> Purchases { get; set; }
+        public ICollection<Sale> Purchases { get; set; } = new List<Sale>();
     }
 }

@@ -25,13 +25,29 @@ namespace CarDealer.Data
             services.AddDbContext<CarDealerDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<User, IdentityRole>()
+            services.AddIdentity<User, IdentityRole>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+            })
                 .AddEntityFrameworkStores<CarDealerDbContext>()
                 .AddDefaultTokenProviders();
 
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddTransient<ICustomerService, CustomerService>();
+
+            services.AddTransient<ICarService, CarService>();
+
+            services.AddTransient<ISupplierService, SupplierService>();
+
+            services.AddTransient<ISalesService, SalesService>();
+
+            services.AddTransient<IPartService, PartService>();
+
+            services.AddTransient<ILogService, LogService>();
 
             services.AddMvc();
         }
@@ -55,10 +71,10 @@ namespace CarDealer.Data
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name: "orderedCustomers",
-                    template: "customers/all/{orderType}",
-                    defaults: new { controller = "Customers", action = "All" });
+                //routes.MapRoute(
+                //    name: "orderedCustomers",
+                //    template: "customers/all/{orderType}",
+                //    defaults: new { controller = "Customers", action = "All" });
 
                 routes.MapRoute(
                     name: "default",

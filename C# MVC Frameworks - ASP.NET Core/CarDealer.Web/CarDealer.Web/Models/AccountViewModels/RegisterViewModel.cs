@@ -4,10 +4,16 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CarDealer.Data.Models.AccountViewModels
+namespace CarDealer.Models.AccountViewModels
 {
     public class RegisterViewModel
     {
+        [Required]
+        [MinLength(5)]
+        [MaxLength(50)]
+        [Display(Name = "Username")]
+        public string Username { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

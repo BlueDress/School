@@ -1,0 +1,27 @@
+﻿@model PartModel
+
+@{
+    ViewData["Title"] = "Delete Part";
+}
+
+<h2>Are you sure you want to delete this part</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Price">Price</label>
+                <input asp-for="Price" readonly placeholder="@Model.Price">
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity">Quantity</label>
+                <input asp-for="Quantity" readonly placeholder="@Model.Quantity">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-danger" value="Delete Part">Delete</button>
+                <a href="/parts/all" class="btn btn-default" value="Cancel">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+

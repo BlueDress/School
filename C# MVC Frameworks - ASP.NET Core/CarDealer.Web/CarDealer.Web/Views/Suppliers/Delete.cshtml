@@ -1,0 +1,22 @@
+﻿@model SupplierModel
+
+@{
+    ViewData["Title"] = "Delete Supplier";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Name">Name</label>
+                <input asp-for="Name" readonly placeholder="@Model.Name">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-danger" value="Delete Supplier">Delete</button>
+                <a href="/suppliers/all" class="btn btn-default" value="Cancel">Back</a>
+            </div>
+        </form>
+    </div>
+</div>

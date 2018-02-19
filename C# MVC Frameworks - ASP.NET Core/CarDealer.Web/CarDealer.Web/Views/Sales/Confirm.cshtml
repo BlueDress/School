@@ -1,0 +1,51 @@
+﻿@model ConfirmSaleModel
+
+@{
+    ViewData["Title"] = "Review Sale";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="CustomerName">Customer Name</label>
+                <input asp-for="CustomerName" readonly required class="form-control" placeholder="Customer Name">
+                <span asp-validation-for="CustomerName" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="CustomerId" hidden required class="hidden">
+                <span asp-validation-for="CustomerId" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarMakeModel">Car</label>
+                <input asp-for="CarMakeModel" readonly required class="form-control">
+                <span asp-validation-for="CarMakeModel" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="CarId" hidden required class="hidden">
+                <span asp-validation-for="CarId" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Discount">Discount</label>
+                <input asp-for="Discount" readonly required class="form-control" placeholder="Discount">
+                <span asp-validation-for="Discount" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price">Price</label>
+                <input asp-for="Price" readonly required class="form-control" placeholder="Price">
+                <span asp-validation-for="Price" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FinalPrice">Final Price</label>
+                <input asp-for="FinalPrice" readonly required class="form-control" placeholder="Final Price">
+                <span asp-validation-for="FinalPrice" class="form-text text-danger"></span>
+            </div>
+            <div>
+                <a href="/sales/add" class="btn btn-default" value="Cancel">Cancel</a>
+                <button type="submit" class="btn btn-success" value="Confirm Sale">Finalize</button>
+            </div>
+        </form>
+    </div>
+</div> 

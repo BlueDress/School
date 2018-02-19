@@ -6,7 +6,7 @@
 
 <h2>Customers ordered by @Model.OrderType.ToString()</h2>
 
-<table class="table">
+<table class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>
@@ -16,7 +16,7 @@
                 Birth Date
             </th>
             <th>
-                Is Young Driver
+                Young Driver
             </th>
         </tr>
     </thead>
@@ -28,10 +28,13 @@
                     @customer.Name
                 </td>
                 <td>
-                    @customer.BirthDate
+                    @customer.BirthDate.ToString("dd-MM-yyyy")
                 </td>
                 <td>
                     @(customer.IsYoungDriver ? "Yes" : "No")
+                </td>
+                <td>
+                    <a href="/customers/edit/@customer.Id" type="button" class="btn btn-warning" value="Edit Customer">Edit</a>
                 </td>
             </tr>
         }

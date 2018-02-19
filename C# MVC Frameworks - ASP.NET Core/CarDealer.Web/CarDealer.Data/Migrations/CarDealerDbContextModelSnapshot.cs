@@ -58,6 +58,24 @@ namespace CarDealer.Data.Migrations
                     b.ToTable("Customers");
                 });
 
+            modelBuilder.Entity("CarDealer.Data.Models.Log", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ModifiedTable");
+
+                    b.Property<string>("Operation");
+
+                    b.Property<DateTime>("TimeOfModifying");
+
+                    b.Property<string>("User");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Logs");
+                });
+
             modelBuilder.Entity("CarDealer.Data.Models.Part", b =>
                 {
                     b.Property<int>("Id")

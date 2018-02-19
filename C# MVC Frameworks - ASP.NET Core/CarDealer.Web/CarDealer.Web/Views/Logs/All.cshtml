@@ -1,0 +1,69 @@
+﻿@model LogPaginationModel
+
+@{
+    ViewData["Title"] = "All Logs";
+}
+
+<h2>@ViewData["Title"]</h2>
+<div>
+    <form method="get">
+        <input type="text" class="form-control" name="search" placeholder="Username..." />
+        <input type="submit" class="btn btn-default" value="Search" />
+        <a class="btn btn-danger" href="/logs/delete">Clear All Logs</a>
+    </form>
+</div>
+<div>
+    <ul class="pagination">
+        <li><a href="/logs/all/@Model.PreviousPage"><<</a></li>
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            @if (Model.CurrentPage == i)
+            {
+                <li><a active href="/logs/all/@i">@i</a></li>
+            }
+            else
+            {
+                <li><a href="/logs/all/@i">@i</a></li>
+            }
+        }
+        <li><a href="/logs/all/@Model.NextPage">>></a></li>
+    </ul>
+</div>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                User
+            </th>
+            <th>
+                Operation
+            </th>
+            <th>
+                Modified Table
+            </th>
+            <th>
+                Time
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var log in Model.Logs)
+        {
+            <tr>
+                <td>
+                    @log.User
+                </td>
+                <td>
+                    @log.Operation
+                </td>
+                <td>
+                    @log.ModifiedTable
+                </td>
+                <td>
+                    @log.TimeOfModifying
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
