@@ -1,0 +1,13 @@
+22-Feb-18 11:37:18 – ::1 – First – HomeController.Index
+22-Feb-18 11:37:24 – ::1 – First – CamerasController.All
+22-Feb-18 11:37:27 – ::1 – First – CamerasController.Details
+22-Feb-18 11:37:29 – ::1 – First – UsersController.Details
+[!] 22-Feb-18 11:38:42 – ::1 – First – UsersController.Details -InvalidOperationException – Sequence contains no elements
+22-Feb-18 12:26:20 – ::1 – First – HomeController.Index
+22-Feb-18 12:26:24 – ::1 – First – CamerasController.All
+22-Feb-18 12:26:25 – ::1 – First – CamerasController.Details
+22-Feb-18 12:26:26 – ::1 – First – UsersController.Details
+22-Feb-18 12:27:45 – ::1 – First – HomeController.Index
+22-Feb-18 12:27:50 – ::1 – First – CamerasController.All
+22-Feb-18 12:27:51 – ::1 – First – CamerasController.Details
+22-Feb-18 12:27:52 – ::1 – First – UsersController.Details

@@ -1,0 +1,78 @@
+﻿@model UserDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@Model.User.Username @if (Model.IsCurrentUser)
+{ <a type="submit" class="btn btn-primary" href="/users/edit/@Model.User.Username">Edit Profile</a>}</h2>
+<div>Email: @Model.User.Email</div>
+<div>Phone: @Model.User.Phone</div>
+<div>Cameras: @Model.User.CamerasInStock in stock / @Model.User.CamerasOutOfStock out of stock</div>
+
+<h2>Cameras:</h2>
+
+@if (Model.User.Cameras.Count() > 0)
+{
+    @foreach (var camera in Model.User.Cameras)
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="col-md-3">
+                        <div class="img-thumbnail">
+                            <a href="@camera.ImageUrl">
+                                <img src="@camera.ImageUrl" height="85" width="150">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-4">
+                                @($"{camera.Model} {camera.Make}")
+                            </div>
+                            <div class="col-md-4">
+                                $@camera.Price
+                            </div>
+                            @if (Model.IsCurrentUser)
+                            {
+                                <div class="col-md-4">
+                                    <a type="submit" class="btn btn-primary" href="/cameras/edit/@camera.Id">Edit Camera</a>
+                                </div>
+                            }
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <span><a href="/cameras/details/@camera.Id">Details</a></span>
+                            </div>
+                            <div class="col-md-4">
+                                @if (camera.IsInStock)
+                                {
+                                    <font color="green">IN STOCK</font>
+                                }
+                                else
+                                {
+                                    <font color="red">OUT OF STOCK</font>
+                                }
+                            </div>
+                            @if (Model.IsCurrentUser)
+                            {
+                                <div class="col-md-4">
+                                    <a type="submit" class="btn btn-danger" href="/cameras/delete/@camera.Id">Delete Camera</a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div>This user is not selling any cameras. Go to <a href="/">home page</a> tofind more offers of other users.</div>
+}
+
+

@@ -1,0 +1,18 @@
+﻿@model EditUserModel
+
+@{
+    ViewData["Title"] = "Edit Profile";
+}
+
+<h2>@ViewData["Title"]</h2>
+<form method="post">
+    <label asp-for="Email"></label>
+    <input asp-for="Email" type="text" class="form-control" />
+    <label asp-for="CurrentPassword"></label>
+    <input asp-for="CurrentPassword" type="text" class="form-control" />
+    <label asp-for="NewPassword"></label>
+    <input asp-for="NewPassword" type="text" class="form-control" />
+    <label asp-for="Phone"></label>
+    <input asp-for="Phone" type="text" class="form-control" />
+    <span><a href="/users/details/@Model.Username" class="btn btn-default">Cancel</a><a type="submit" href="/users/edit/@Model.Username" class="btn btn-primary">Edit</a></span>
+</form>
