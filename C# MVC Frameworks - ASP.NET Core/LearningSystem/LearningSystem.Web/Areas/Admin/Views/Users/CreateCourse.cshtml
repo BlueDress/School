@@ -1,0 +1,42 @@
+﻿@model CreateCourseModel
+@{
+    ViewData["Title"] = "Create Course";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" type="text" class="form-control">
+                <span asp-validation-for="Name" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <input asp-for="Description" type="text" class="form-control">
+                <span asp-validation-for="Description" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate"></label>
+                <input asp-for="StartDate" type="date" class="form-control">
+                <span asp-validation-for="StartDate" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate"></label>
+                <input asp-for="EndDate" type="date" class="form-control">
+                <span asp-validation-for="EndDate" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrainerId"></label>
+                <input asp-for="TrainerId" type="text" class="form-control">
+                <span asp-validation-for="TrainerId" class="form-text text-danger"></span>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-success" value="Create Course">Create Course</button>
+            </div>
+        </form>
+    </div>
+</div> 
+

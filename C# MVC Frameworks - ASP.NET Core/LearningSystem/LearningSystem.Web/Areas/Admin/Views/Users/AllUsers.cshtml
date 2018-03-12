@@ -1,0 +1,43 @@
+﻿@model AddUserToRoleModel
+@{
+    ViewData["Title"] = "All Users";
+}
+
+<h2>@ViewData["Title"]</h2>
+<table class="table-bordered, table-hover">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Username
+            </th>
+            <th>
+                Select Role
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <th>
+                    @user.Name
+                </th>
+                <th>
+                    @user.Username
+                </th>
+                <th>
+                    <form asp-controller="Users" asp-action="AddToRole" method="post">
+                        <input name="UserId" value="@user.Id" type="hidden"/>
+                        <select name="Role" asp-items="@Model.Roles" class="form-control"></select>
+                        <input class="btn-sm btn-default" type="submit" value="Add To Role"/>
+                    </form>
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

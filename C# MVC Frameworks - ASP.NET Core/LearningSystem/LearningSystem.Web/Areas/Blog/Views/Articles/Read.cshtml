@@ -1,0 +1,9 @@
+﻿@model ReadArticleModel
+@{
+    ViewData["Title"] = "Read Article";
+}
+
+<h2>@Model.Title</h2>
+<h3>By @Model.AuthorName</h3>
+<div>@Model.Content</div>
+<h4>Published: @Model.PublishDate</h4>

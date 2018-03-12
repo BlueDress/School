@@ -1,0 +1,15 @@
+﻿@model IEnumerable<ListAllArticlesModel>
+@{
+    ViewData["Title"] = "All Articles";
+}
+
+<h2>@ViewData["Title"]</h2>
+@foreach (var article in Model)
+{
+    <div class="d-inline-block bg-info">
+        <h3>@article.Title</h3>
+        <div>Published: @article.PublishDate.ToShortDateString() By: @article.AuthorName</div>
+        <a href="/blog/articles/read/@article.Id">Read Article</a>
+    </div>
+}
+

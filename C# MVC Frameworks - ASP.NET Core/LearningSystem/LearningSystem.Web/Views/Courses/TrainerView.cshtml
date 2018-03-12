@@ -1,0 +1,22 @@
+﻿@model ViewCourseModel
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<h2>@ViewData["Title"]</h2>
+<br />
+<br />
+<h3>Trainer - @Model.TrainerName</h3>
+<br />
+<br />
+<h4>End Date - @Model.EndDate.ToShortDateString()</h4>
+<h4>Start Date - @Model.StartDate.ToShortDateString()</h4>
+<br />
+<br />
+<h5>@Model.Description</h5>
+<br />
+<br />
+<div>
+    <a href="/courses/viewstudents/@Model.Id" class="btn btn-default">View students</a>
+</div>
+

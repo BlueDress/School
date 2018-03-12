@@ -1,0 +1,16 @@
+﻿@model IQueryable<ListAllCoursesModel>
+
+@{
+    ViewData["Title"] = "All Courses";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@foreach (var course in Model)
+{
+    <div class="d-inline-block bg-info">
+        <h3>@course.Name</h3>
+        <div>Starting: @course.StartDate.ToShortDateString()</div>
+        <a href="/courses/view/@course.Id">Learn More</a>
+    </div>
+}

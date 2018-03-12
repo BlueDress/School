@@ -1,0 +1,21 @@
+﻿@model IEnumerable<ListAllCoursesModel>
+@{
+    ViewData["Title"] = "All Courses";
+    ViewData.AddActivePage(ManageNavPages.Courses);
+}
+
+<h4>@ViewData["Title"]</h4>
+@foreach (var course in Model)
+{
+    <div class="d-inline-block bg-info">
+        <h3>@course.Name</h3>
+        <div>Starting: @course.StartDate.ToShortDateString()</div>
+        <a href="/courses/view/@course.Id">Learn More</a>
+    </div>
+
+    @if (course.StartDate >= DateTime.Now)
+    {
+        <a class="btn btn-default" href="/manage/signoutofcourse/@course.Id">Sign Out</a>
+    }
+}
+
