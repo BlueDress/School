@@ -18,6 +18,8 @@ namespace LearningSystem.Services.Contracts
 
         IEnumerable<StudentsInCourseModel> GetStudentsInCourseById(int id);
 
+        void GradeStudent(string studentId, int courseId, Grade grade);
+
         bool CourseExists(int id);
     }
 }

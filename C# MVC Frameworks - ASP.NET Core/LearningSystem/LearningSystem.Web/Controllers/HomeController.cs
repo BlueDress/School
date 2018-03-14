@@ -4,6 +4,7 @@ using LearningSystem.Web.Models;
 using LearningSystem.Services.Contracts;
 using AutoMapper.QueryableExtensions;
 using LearningSystem.Services.Models.Courses;
+using System.Linq;
 
 namespace LearningSystem.Data.Controllers
 {
@@ -21,6 +22,21 @@ namespace LearningSystem.Data.Controllers
             var allCourses = this.homeService.GetAllCourses().ProjectTo<ListAllCoursesModel>();
 
             return View(allCourses);
+        }
+
+        [HttpPost]
+        public IActionResult Index(string wordToSearch)
+        {
+            if (string.IsNullOrEmpty(wordToSearch) || string.IsNullOrWhiteSpace(wordToSearch))
+            {
+                var allCourses = this.homeService.GetAllCourses().ProjectTo<ListAllCoursesModel>();
+
+                return View(allCourses);
+            }
+
+            var allCoursesSearched = this.homeService.GetAllCourses().ProjectTo<ListAllCoursesModel>().Where(c => c.Name.Contains(wordToSearch));
+
+            return View(allCoursesSearched);
         }
 
         public IActionResult About()

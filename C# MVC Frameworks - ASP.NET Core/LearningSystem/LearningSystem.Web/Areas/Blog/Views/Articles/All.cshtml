@@ -4,6 +4,12 @@
 }
 
 <h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <input name="wordToSearch" type="text" placeholder="Search in articles" />
+    <button type="submit" class="btn btn-default" value="Search">Search</button>
+</form>
+
 @foreach (var article in Model)
 {
     <div class="d-inline-block bg-info">

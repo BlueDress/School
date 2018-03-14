@@ -8,6 +8,8 @@ namespace LearningSystem.Web.Models.Courses
     {
         public IEnumerable<StudentsInCourseModel> Students { get; set; }
 
+        public int CourseId { get; set; }
+
         public DateTime EndDate { get; set; }
     }
 }

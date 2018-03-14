@@ -80,10 +80,20 @@ namespace LearningSystem.Web.Controllers
             var model = new TrainerViewStudentsModel
             {
                 Students = studentsInCourse,
+                CourseId = id,
                 EndDate = endDate
             };
 
             return View(model);
+        }
+
+        [Authorize(Roles = "Trainer")]
+        [HttpPost]
+        public IActionResult GradeStudent(int id, string studentId, Grade grade)
+        {
+            this.coursesService.GradeStudent(studentId, id, grade);
+
+            return RedirectToAction(nameof(TrainersCourses));
         }
     }
 }

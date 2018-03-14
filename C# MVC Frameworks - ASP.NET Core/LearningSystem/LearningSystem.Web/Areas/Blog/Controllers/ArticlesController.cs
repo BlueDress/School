@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace LearningSystem.Web.Areas.Blog.Controllers
@@ -21,12 +22,27 @@ namespace LearningSystem.Web.Areas.Blog.Controllers
             this.userManager = userManager;
         }
 
-        [Authorize]
+        [AllowAnonymous]
         public IActionResult All()
         {
             var allArticles = this.articleService.GetAllArticles();
 
             return View(allArticles);
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public IActionResult All(string wordToSearch)
+        {
+            if (string.IsNullOrEmpty(wordToSearch) || string.IsNullOrWhiteSpace(wordToSearch))
+            {
+                var allArticles = this.articleService.GetAllArticles();
+
+                return View(allArticles);
+            }
+            var allArticlesSearched = this.articleService.GetAllArticles().Where(a => a.Title.Contains(wordToSearch));
+
+            return View(allArticlesSearched);
         }
 
         [Authorize]

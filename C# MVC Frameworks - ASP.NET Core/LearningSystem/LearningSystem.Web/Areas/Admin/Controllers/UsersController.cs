@@ -61,6 +61,45 @@ namespace LearningSystem.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        public IActionResult AllUsers(string wordToSearch)
+        {
+            if (string.IsNullOrEmpty(wordToSearch) || string.IsNullOrWhiteSpace(wordToSearch))
+            {
+                var allUsers = this.userService.GetAllUsers();
+
+                var roles = this.roleManager.Roles.Select(r => new SelectListItem
+                {
+                    Text = r.Name,
+                    Value = r.Name
+                });
+
+                var model = new AddUserToRoleModel
+                {
+                    Roles = roles,
+                    Users = allUsers
+                };
+
+                return View(model);
+            }
+
+            var allUsersSearched = this.userService.GetAllUsers().Where(u => u.Name.Contains(wordToSearch));
+
+            var rolesSearched = this.roleManager.Roles.Select(r => new SelectListItem
+            {
+                Text = r.Name,
+                Value = r.Name
+            });
+
+            var modelSearched = new AddUserToRoleModel
+            {
+                Roles = rolesSearched,
+                Users = allUsersSearched
+            };
+
+            return View(modelSearched);
+        }
+
+        [HttpPost]
         public async Task<IActionResult> AddToRole(string role, string userId)
         {
             var user = await this.userManager.FindByIdAsync(userId);

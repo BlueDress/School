@@ -64,9 +64,19 @@ namespace LearningSystem.Services.Implementations
         {
             return this.db.StudentCourses.Where(sc => sc.CourseId == id).Select(sc => new StudentsInCourseModel
             {
+                Id = sc.StudentId,
                 Name = sc.Student.Name,
-                Email = sc.Student.Email
+                Email = sc.Student.Email,
+                Grade = sc.Grade
             });
+        }
+
+        public void GradeStudent(string studentId, int courseId, Grade grade)
+        {
+            var studentInCourse = this.db.StudentCourses.Where(sc => sc.StudentId.Equals(studentId) && sc.CourseId == courseId).First();
+            studentInCourse.Grade = grade;
+
+            this.db.SaveChanges();
         }
 
         public bool CourseExists(int id)

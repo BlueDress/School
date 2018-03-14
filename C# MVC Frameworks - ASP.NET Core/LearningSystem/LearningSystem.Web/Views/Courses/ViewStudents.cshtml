@@ -14,6 +14,9 @@
             <td>
                 Email
             </td>
+            <td>
+                Grade
+            </td>
             <td></td>
         </tr>
     </thead>
@@ -28,9 +31,16 @@
                     @student.Email
                 </td>
                 <td>
+                    @(student.Grade == null ? "No grade" : student.Grade.ToString())
+                </td>
+                <td>
                     @if (Model.EndDate <= DateTime.Now)
                     {
-                        <a class="btn btn-primary">Assess</a>
+                        <form asp-action="GradeStudent" asp-route-id="@Model.CourseId" method="post">
+                            <input hidden name="studentId" value="@student.Id"/>
+                            <select asp-items="@Html.GetEnumSelectList<Grade>()" name="grade"></select>
+                            <input type="submit" class="btn btn-default" value="Add Grade"/>
+                        </form>
                     }
                 </td>
             </tr>
