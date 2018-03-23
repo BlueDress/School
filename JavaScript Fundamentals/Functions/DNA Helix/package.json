@@ -1,0 +1,9 @@
+{
+  "name": "dna-helix",
+  "version": "0.0.0",
+  "description": "DNA Helix",
+  "main": "app.js",
+  "author": {
+    "name": "Beijar"
+  }
+}

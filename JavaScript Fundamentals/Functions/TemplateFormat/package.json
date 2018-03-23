@@ -1,0 +1,9 @@
+{
+  "name": "template-format",
+  "version": "0.0.0",
+  "description": "TemplateFormat",
+  "main": "app.js",
+  "author": {
+    "name": "Beijar"
+  }
+}
