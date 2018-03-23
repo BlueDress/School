@@ -19,4 +19,4 @@ function printDNAHelix(num) {
     }
 }
 
-printDNAHelix(10);
+printDNAHelix(20);
