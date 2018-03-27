@@ -1,0 +1,9 @@
+{
+  "name": "print-array-with-delimiter",
+  "version": "0.0.0",
+  "description": "PrintArrayWithDelimiter",
+  "main": "app.js",
+  "author": {
+    "name": "Beijar"
+  }
+}

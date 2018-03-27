@@ -1,0 +1,9 @@
+{
+  "name": "extract-non-decreasing-subsequence",
+  "version": "0.0.0",
+  "description": "ExtractNonDecreasingSubsequence",
+  "main": "app.js",
+  "author": {
+    "name": "Beijar"
+  }
+}

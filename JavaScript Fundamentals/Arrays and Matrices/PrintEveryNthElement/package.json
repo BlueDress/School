@@ -1,0 +1,9 @@
+{
+  "name": "print-every-nth-element",
+  "version": "0.0.0",
+  "description": "PrintEveryNthElement",
+  "main": "app.js",
+  "author": {
+    "name": "Beijar"
+  }
+}
