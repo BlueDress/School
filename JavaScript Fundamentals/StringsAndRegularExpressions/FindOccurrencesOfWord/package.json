@@ -1,0 +1,9 @@
+{
+  "name": "find-occurrences-of-word",
+  "version": "0.0.0",
+  "description": "FindOccurrencesOfWord",
+  "main": "app.js",
+  "author": {
+    "name": "Beijar"
+  }
+}
