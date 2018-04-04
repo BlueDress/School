@@ -3,17 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImplementArrayList", "ImplementArrayList\ImplementArrayList.csproj", "{5F067F7D-16AA-449A-BA5A-DC94E1DFD86C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImplementArrayList", "ImplementArrayList\ImplementArrayList.csproj", "{5F067F7D-16AA-449A-BA5A-DC94E1DFD86C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumAndAverage", "SumAndAverage\SumAndAverage.csproj", "{A04A8B50-6F3E-4EE2-A54C-14EFBD995655}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SumAndAverage", "SumAndAverage\SumAndAverage.csproj", "{A04A8B50-6F3E-4EE2-A54C-14EFBD995655}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortWords", "SortWords\SortWords.csproj", "{550EBFDA-3901-483C-B68F-2DCA0874732F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortWords", "SortWords\SortWords.csproj", "{550EBFDA-3901-483C-B68F-2DCA0874732F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestSubsequence", "LongestSubsequence\LongestSubsequence.csproj", "{2D8BB520-6B54-4908-AA71-437DBB2EE02C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LongestSubsequence", "LongestSubsequence\LongestSubsequence.csproj", "{2D8BB520-6B54-4908-AA71-437DBB2EE02C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveOddOccurrences", "RemoveOddOccurrences\RemoveOddOccurrences.csproj", "{F5637C4B-751C-4F94-90A8-8315344C509F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoveOddOccurrences", "RemoveOddOccurrences\RemoveOddOccurrences.csproj", "{F5637C4B-751C-4F94-90A8-8315344C509F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountOfOccurrences", "CountOfOccurrences\CountOfOccurrences.csproj", "{C6EE6294-1519-4345-B426-AF51D06B7AB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CountOfOccurrences", "CountOfOccurrences\CountOfOccurrences.csproj", "{C6EE6294-1519-4345-B426-AF51D06B7AB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImplementDoublyLinkedList", "ImplementDoublyLinkedList\ImplementDoublyLinkedList.csproj", "{7B726BFF-73D5-46F5-8C8F-427DE05C46DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseNumbersWithStack", "ReverseNumbersWithStack\ReverseNumbersWithStack.csproj", "{B4D6DF3A-01BA-4DAF-B745-518DA50A5401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculateSequenceWithQueue", "CalculateSequenceWithQueue\CalculateSequenceWithQueue.csproj", "{C0AC80D4-37E0-4F34-ADD0-5AE7A852F894}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortestSequenceOfOperations", "ShortestSequenceOfOperations\ShortestSequenceOfOperations.csproj", "{6666AAEB-1810-4C14-8E1D-17384DFAE312}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceInLabyrinth", "DistanceInLabyrinth\DistanceInLabyrinth.csproj", "{E0A621B9-668A-4080-A2BC-3DB9445424C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +55,26 @@ Global
 		{C6EE6294-1519-4345-B426-AF51D06B7AB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6EE6294-1519-4345-B426-AF51D06B7AB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6EE6294-1519-4345-B426-AF51D06B7AB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B726BFF-73D5-46F5-8C8F-427DE05C46DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B726BFF-73D5-46F5-8C8F-427DE05C46DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B726BFF-73D5-46F5-8C8F-427DE05C46DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B726BFF-73D5-46F5-8C8F-427DE05C46DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4D6DF3A-01BA-4DAF-B745-518DA50A5401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4D6DF3A-01BA-4DAF-B745-518DA50A5401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4D6DF3A-01BA-4DAF-B745-518DA50A5401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4D6DF3A-01BA-4DAF-B745-518DA50A5401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0AC80D4-37E0-4F34-ADD0-5AE7A852F894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0AC80D4-37E0-4F34-ADD0-5AE7A852F894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0AC80D4-37E0-4F34-ADD0-5AE7A852F894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0AC80D4-37E0-4F34-ADD0-5AE7A852F894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6666AAEB-1810-4C14-8E1D-17384DFAE312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6666AAEB-1810-4C14-8E1D-17384DFAE312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6666AAEB-1810-4C14-8E1D-17384DFAE312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6666AAEB-1810-4C14-8E1D-17384DFAE312}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0A621B9-668A-4080-A2BC-3DB9445424C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0A621B9-668A-4080-A2BC-3DB9445424C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0A621B9-668A-4080-A2BC-3DB9445424C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0A621B9-668A-4080-A2BC-3DB9445424C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
