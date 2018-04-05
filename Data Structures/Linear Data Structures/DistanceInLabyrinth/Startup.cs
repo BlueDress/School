@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DistanceInLabyrinth
 {
@@ -6,10 +7,16 @@ namespace DistanceInLabyrinth
     {
         public static void Main()
         {
-            var mazeDimensions = int.Parse(Console.ReadLine());
+            FillMatrix(out int mazeDimensions, out MazeCell[][] maze, out MazeCell startCell);
+            FindDistance(startCell, maze);
+            PrintResult(mazeDimensions, maze);
+        }
 
-            var maze = new MazeCell[mazeDimensions][];
-            var startCell = new MazeCell();
+        private static void FillMatrix(out int mazeDimensions, out MazeCell[][] maze, out MazeCell startCell)
+        {
+            mazeDimensions = int.Parse(Console.ReadLine());
+            maze = new MazeCell[mazeDimensions][];
+            startCell = new MazeCell();
 
             for (int i = 0; i < mazeDimensions; i++)
             {
@@ -43,74 +50,87 @@ namespace DistanceInLabyrinth
                     }
                 }
             }
-
-            FindDistance(startCell, maze);
-
-            for (int i = 0; i < mazeDimensions; i++)
-            {
-                for (int j = 0; j < mazeDimensions; j++)
-                {
-                    Console.Write(maze[i][j].Value);
-                }
-
-                Console.WriteLine();
-            }
         }
 
         private static void FindDistance(MazeCell startCell, MazeCell[][] maze)
         {
-            var value = startCell.Value.Equals("*") ? 0 : int.Parse(startCell.Value);
-            
-            if (startCell.Left != null)
+            var queue = new Queue<MazeCell>();
+            queue.Enqueue(startCell);
+
+            while (true)
             {
-                startCell.Left = maze[startCell.Row][startCell.Column - 1];
-
-                if (!startCell.Left.IsChecked)
+                if (queue.Count <= 0)
                 {
-                    startCell.Left.Value = (value + 1).ToString();
-                    startCell.Left.IsChecked = true;
+                    break;
+                }
 
-                    FindDistance(startCell.Left, maze);
+                var nextCell = queue.Dequeue();
+                var value = nextCell.Value.Equals("*") ? 0 : int.Parse(nextCell.Value);
+
+                if (nextCell.Left != null)
+                {
+                    nextCell.Left = maze[nextCell.Row][nextCell.Column - 1];
+
+                    if (!nextCell.Left.IsChecked)
+                    {
+                        queue.Enqueue(nextCell.Left);
+
+                        nextCell.Left.Value = (value + 1).ToString();
+                        nextCell.Left.IsChecked = true;
+                    }
+                }
+
+                if (nextCell.Right != null)
+                {
+                    nextCell.Right = maze[nextCell.Row][nextCell.Column + 1];
+
+                    if (!nextCell.Right.IsChecked)
+                    {
+                        queue.Enqueue(nextCell.Right);
+
+                        nextCell.Right.Value = (value + 1).ToString();
+                        nextCell.Right.IsChecked = true;
+                    }
+                }
+
+                if (nextCell.Top != null)
+                {
+                    nextCell.Top = maze[nextCell.Row - 1][nextCell.Column];
+
+                    if (!nextCell.Top.IsChecked)
+                    {
+                        queue.Enqueue(nextCell.Top);
+
+                        nextCell.Top.Value = (value + 1).ToString();
+                        nextCell.Top.IsChecked = true;
+                    }
+                }
+
+                if (nextCell.Bottom != null)
+                {
+                    nextCell.Bottom = maze[nextCell.Row + 1][nextCell.Column];
+
+                    if (!nextCell.Bottom.IsChecked)
+                    {
+                        queue.Enqueue(nextCell.Bottom);
+
+                        nextCell.Bottom.Value = (value + 1).ToString();
+                        nextCell.Bottom.IsChecked = true;
+                    }
                 }
             }
+        }
 
-            if (startCell.Right != null)
+        private static void PrintResult(int mazeDimensions, MazeCell[][] maze)
+        {
+            for (int i = 0; i < mazeDimensions; i++)
             {
-                startCell.Right = maze[startCell.Row][startCell.Column + 1];
-
-                if (!startCell.Right.IsChecked)
+                for (int j = 0; j < mazeDimensions; j++)
                 {
-                    startCell.Right.Value = (value + 1).ToString();
-                    startCell.Right.IsChecked = true;
-
-                    FindDistance(startCell.Right, maze);
+                    Console.Write(maze[i][j].Value == "0" ? "u" : maze[i][j].Value);
                 }
-            }
 
-            if (startCell.Top != null)
-            {
-                startCell.Top = maze[startCell.Row - 1][startCell.Column];
-
-                if (!startCell.Top.IsChecked)
-                {
-                    startCell.Top.Value = (value + 1).ToString();
-                    startCell.Top.IsChecked = true;
-
-                    FindDistance(startCell.Top, maze);
-                }
-            }
-
-            if (startCell.Bottom != null)
-            {
-                startCell.Bottom = maze[startCell.Row + 1][startCell.Column];
-
-                if (!startCell.Bottom.IsChecked)
-                {
-                    startCell.Bottom.Value = (value + 1).ToString();
-                    startCell.Bottom.IsChecked = true;
-
-                    FindDistance(startCell.Bottom, maze);
-                }
+                Console.WriteLine();
             }
         }
     }
