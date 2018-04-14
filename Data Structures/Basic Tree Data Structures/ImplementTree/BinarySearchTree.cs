@@ -47,7 +47,7 @@ namespace ImplementTree
         {
             this.count++;
 
-            if (this.root.Value == null)
+            if (this.root == null)
             {
                 this.root = new Node(value);
                 return;
@@ -242,30 +242,33 @@ namespace ImplementTree
                     break;
                 }
 
+
                 if (currentNode.Value.CompareTo(value) > 0)
                 {
+                    parent = currentNode;
                     currentNode = currentNode.LeftChild;
                 }
                 else if (currentNode.Value.CompareTo(value) < 0)
                 {
+                    parent = currentNode;
                     currentNode = currentNode.RightChild;
                 }
                 else
                 {
                     break;
                 }
-
-                parent = currentNode;
             }
 
             var deleteRightChild = false;
 
-            if (parent.RightChild.Value.CompareTo(currentNode.Value) == 0)
+            if (parent?.RightChild?.Value.CompareTo(currentNode.Value) == 0)
             {
                 deleteRightChild = true;
             }
 
             this.Delete(parent, currentNode, deleteRightChild);
+
+            this.count--;
         }
 
         private void Delete(Node parent, Node node, bool deleteRightChild)
@@ -279,13 +282,21 @@ namespace ImplementTree
             {
                 var currentNode = node.RightChild;
 
-                if (deleteRightChild)
+                if (parent == null)
                 {
-                    parent.RightChild = currentNode;
+                    this.root = currentNode;
                 }
-                else
+
+                if (parent != null)
                 {
-                    parent.LeftChild = currentNode;
+                    if (deleteRightChild)
+                    {
+                        parent.RightChild = currentNode;
+                    }
+                    else
+                    {
+                        parent.LeftChild = currentNode;
+                    }
                 }
 
                 while (true)
@@ -299,37 +310,38 @@ namespace ImplementTree
                 }
 
                 currentNode.LeftChild = node.LeftChild;
-
-                if (parent == null)
-                {
-                    this.root = currentNode;
-                }
             }
             else if (node.LeftChild != null)
             {
-                if (deleteRightChild)
-                {
-                    parent.RightChild = node.LeftChild;
-                }
-                else
-                {
-                    parent.LeftChild = node.LeftChild;
-                }
-
                 if (parent == null)
                 {
                     this.root = node.LeftChild;
                 }
+
+                if (parent != null)
+                {
+                    if (deleteRightChild)
+                    {
+                        parent.RightChild = node.LeftChild;
+                    }
+                    else
+                    {
+                        parent.LeftChild = node.LeftChild;
+                    }
+                }
             }
             else
             {
-                if (deleteRightChild)
+                if (parent != null)
                 {
-                    parent.RightChild = null;
-                }
-                else
-                {
-                    parent.LeftChild = null;
+                    if (deleteRightChild)
+                    {
+                        parent.RightChild = null;
+                    }
+                    else
+                    {
+                        parent.LeftChild = null;
+                    }
                 }
 
                 if (parent == null)
@@ -384,61 +396,6 @@ namespace ImplementTree
             this.Rank(value, elements, this.root);
 
             return elements.Count - 1;
-            //var currentNode = this.root;
-            //
-            //while (true)
-            //{
-            //    if (currentNode == null)
-            //    {
-            //        break;
-            //    }
-            //
-            //    if (currentNode.Value.CompareTo(value) > 0)
-            //    {
-            //        currentNode = currentNode.LeftChild;
-            //    }
-            //    else if (currentNode.Value.CompareTo(value) < 0)
-            //    {
-            //        currentNode = currentNode.RightChild;
-            //    }
-            //    else
-            //    {
-            //        break;
-            //    }
-            //}
-            //
-            //if (currentNode.LeftChild == null)
-            //{
-            //    return 0;
-            //}
-            //
-            //var count = 1;
-            //var queue = new Queue<Node>();
-            //queue.Enqueue(currentNode.LeftChild);
-            //
-            //while (true)
-            //{
-            //    if (queue.Count == 0)
-            //    {
-            //        break;
-            //    }
-            //
-            //    var current = queue.Dequeue();
-            //
-            //    if (current.LeftChild != null)
-            //    {
-            //        queue.Enqueue(current.LeftChild);
-            //        count++;
-            //    }
-            //
-            //    if (current.RightChild != null)
-            //    {
-            //        queue.Enqueue(current.RightChild);
-            //        count++;
-            //    }
-            //}
-            //
-            //return count;
         }
 
         private void Rank(T value, List<T> elements, Node node)
@@ -448,12 +405,12 @@ namespace ImplementTree
                 this.Rank(value, elements, node.LeftChild);
             }
 
-            elements.Add(node.Value);
-
-            if (node.Value.CompareTo(value) == 0)
+            if (node.Value.CompareTo(value) > 0)
             {
                 return;
             }
+
+            elements.Add(node.Value);
 
             if (node.RightChild != null)
             {
@@ -472,17 +429,17 @@ namespace ImplementTree
 
         private void Select(int rank, List<T> elements, Node node)
         {
+            if (elements.Count - 1 == rank)
+            {
+                return;
+            }
+
             if (node.LeftChild != null)
             {
                 this.Select(rank, elements, node.LeftChild);
             }
 
             elements.Add(node.Value);
-
-            if (elements.Count - 1 == rank)
-            {
-                return;
-            }
 
             if (node.RightChild != null)
             {
@@ -499,22 +456,22 @@ namespace ImplementTree
         {
             if (node == null)
             {
-                return node.Value;
+                return default(T);
             }
-            
+
             if (node.Value.CompareTo(value) <= 0)
             {
                 return this.Ceiling(node.RightChild, value);
             }
 
-            var ceiling = this.Ceiling(node.LeftChild, value);
+            var ceil = this.Ceiling(node.LeftChild, value);
 
-            if (ceiling == null)
+            if (ceil.CompareTo(default(T)) == 0)
             {
                 return node.Value;
             }
 
-            return ceiling;
+            return ceil;
         }
 
         public T Floor(T value)
@@ -526,7 +483,7 @@ namespace ImplementTree
         {
             if (node == null)
             {
-                return node.Value;
+                return default(T);
             }
 
             if (node.Value.CompareTo(value) >= 0)
@@ -536,7 +493,7 @@ namespace ImplementTree
 
             var floor = this.Floor(node.RightChild, value);
 
-            if (floor == null)
+            if (floor.CompareTo(default(T)) == 0)
             {
                 return node.Value;
             }
