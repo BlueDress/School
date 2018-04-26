@@ -72,7 +72,7 @@ public class Trie<Value>
     {
         if (x == null)
         {
-            return new Node() { val = val };
+            x = new Node();
         }
 
         if (d == key.Length)
