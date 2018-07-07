@@ -1,0 +1,62 @@
+﻿@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Most Popular News</h2>
+
+<div class="container">
+    <div class="col-md-12">
+        <div class="row">
+            @foreach (ArticleHomeListModel article in Model.TopThreeArticles)
+            {
+                <div class="col-md-4">
+                    <div class="thumbnail bootsnipp-thumb" style="background-color:powderblue; border-color:black">
+                        <div>
+                            <p class="pull-right view-counts hidden-md">
+                                <span class="tip" data-toggle="tooltip" title="" data-original-title="Viewed">
+                                    @article.Likes
+                                    <i class="fas fa-thumbs-up"></i>
+                                </span>
+                            </p>
+                            <p class="lead snipp-title" style="background-color:powderblue;">
+                                <a asp-action="Details" asp-route-articleId="@article.Id">@article.Title</a>
+                                <input type="hidden" name="Article Id" value="@article.Id" />
+                            </p>
+                        </div>
+                        <div style="overflow: hidden; padding-left: 10px; position: relative; height: 249.75px; background-color:whitesmoke;">
+                            <span>@article.Content</span>
+                            <a asp-action="Details" asp-route-articleId="@article.Id" style="height:100%;width:100%">
+                                <div style="position:absolute;top:0;left:0;width:100%;height:100%">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<h2>More News</h2>
+
+<div>
+    @foreach (CategoryHomeListModel category in Model.CategoriesWithTopThreeArticles)
+    {
+        <div class="col-sm-3 container-fluid">
+            <h3>@category.Name</h3>
+            <ul>
+                @foreach (Article article in category.Articles)
+                {
+                    <li>
+                        <a asp-action="Details" asp-route-articleId="@article.Id">@article.Title</a>
+                        <input type="hidden" name="Article Id" value="@article.Id" />
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+</div>

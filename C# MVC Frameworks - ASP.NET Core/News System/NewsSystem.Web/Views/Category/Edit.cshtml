@@ -1,0 +1,27 @@
+﻿@model CategoryNameModel
+
+@{
+    ViewData["Title"] = "Edit Category";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post">
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" type="text" class="form-control" placeholder="@Model.Name">
+                <span asp-validation-for="Name" class="form-text text-danger"></span>
+                <input asp-for="Id" type="hidden" value="@Model.Id" />
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" value="Edit Category">Edit</button>
+                <a asp-action="Index" asp-route-sortType="alphadown" class="btn btn-default">Back to list</a>
+            </div>
+        </form>
+    </div>
+</div> 
+

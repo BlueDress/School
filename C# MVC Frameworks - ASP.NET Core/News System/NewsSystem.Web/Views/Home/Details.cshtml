@@ -1,0 +1,48 @@
+﻿@model ArticleDetailsModel
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <h1 class="mt-4">@Model.Title</h1>
+
+            <p class="lead">
+                by
+                <span><font color="darkblue">@Model.Author</font></span>
+            </p>
+
+            <h5><span>in <font color="blue">@Model.Category</font></span></h5>
+
+            <hr>
+
+            <p><font color="green">Posted on @Model.DatePublished</font></p>
+
+            <hr>
+
+            <p class="lead">@Model.Content</p>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <form method="post">
+                    <a asp-action="Like" asp-route-articleId="@Model.Id" class="btn btn-success">
+                        <i class="fas fa-thumbs-up"></i>
+                        <span> @Model.Likes</span>
+                    </a>
+                    <a asp-action="Dislike" asp-route-articleId="@Model.Id" class="btn btn-default">
+                        <i class="fas fa-thumbs-down"></i>
+                        <span> @Model.Dislikes</span>
+                    </a>
+                </form>
+            }
+            else
+            {
+                <i class="fas fa-thumbs-up"></i><span> @Model.Likes</span>
+
+                    <i class="fas fa-thumbs-down"></i><span> @Model.Dislikes</span>
+            }
+
+            <br/>
+            <p> <a asp-action="Index" class="btn btn-primary">Back</a></p>
+
+        </div>
+    </div>
+</div>

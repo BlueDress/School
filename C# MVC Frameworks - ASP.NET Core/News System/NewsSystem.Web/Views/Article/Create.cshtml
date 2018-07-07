@@ -1,0 +1,35 @@
+﻿@model ArticleCreateViewModel
+
+@{
+    ViewData["Title"] = "Create Article";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div class="form-group">
+                <label asp-for="Title"></label>
+                <input asp-for="Title" type="text" class="form-control">
+                <span asp-validation-for="Title" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Content"></label>
+                <textarea asp-for="Content" class="form-control"></textarea>
+                <span asp-validation-for="Content" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category"></label>
+                <select asp-for="Category" asp-items="@Model.Categories" class="form-control"></select>
+                <span asp-validation-for="Category" class="form-text text-danger"></span>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" value="Create Article">Create</button>
+                <a asp-action="Index" asp-route-sortType="bydate" class="btn btn-default">Back to list</a>
+            </div>
+        </form>
+    </div>
+</div> 

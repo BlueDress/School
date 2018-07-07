@@ -1,0 +1,180 @@
+﻿@model ArticleListViewModel
+
+@{
+    ViewData["Title"] = "Articles";
+}
+
+@if (TempData["message"] != null)
+{
+    <div class="alert alert-success">@TempData["message"]</div>
+}
+
+<h2 class="col-md-offset-5">@ViewData["Title"]</h2>
+
+<hr />
+
+@if (Model.SortType.ToString().ToLower().Equals("bydate"))
+{
+    <p>
+        <a asp-action="Index"
+           asp-route-sortType="bytitle"
+           asp-route-articlePage="@(Model.PagingInfo.CurrentPage == 0 ? 1 : Model.PagingInfo.CurrentPage)"
+           class="btn btn-default">
+            <i class="fas fa-sort-alpha-down"></i>
+        </a>
+        <a asp-action="Index"
+           asp-route-sortType="bycategory"
+           asp-route-articlePage="@(Model.PagingInfo.CurrentPage == 0 ? 1 : Model.PagingInfo.CurrentPage)"
+           class="btn btn-default">
+            <i class="fas fa-clipboard-list"></i>
+        </a>
+        <a asp-action="Index"
+           asp-route-sortType="bydate"
+           asp-route-articlePage="@(Model.PagingInfo.CurrentPage == 0 ? 1 : Model.PagingInfo.CurrentPage)"
+           class="btn btn-primary">
+            <i class="fas fa-calendar-alt"></i>
+        </a>
+        <a asp-action="Index"
+           asp-route-sortType="bylikes"
+           asp-route-articlePage="@(Model.PagingInfo.CurrentPage == 0 ? 1 : Model.PagingInfo.CurrentPage)"
+           class="btn btn-default">
+            <i class="fas fa-thumbs-up"></i>
+        </a>
+    </p>
+}
+else if (Model.SortType.ToString().ToLower().Equals("bytitle"))
+{
+    <p>
+        <a asp-action="Index"
+           asp-route-sortType="bytitle"
+           asp-route-articlePage="@(Model.PagingInfo.CurrentPage == 0 ? 1 : Model.PagingInfo.CurrentPage)"
+           class="btn btn-primary">
+            <i class="fas fa-sort-alpha-down"></i>
+        </a>
+        <a asp-action="Index"
+           asp-route-sortType="bycategory"
+           asp-route-articlePage="@(Model.PagingInfo.CurrentPage == 0 ? 1 : Model.PagingInfo.CurrentPage)"
+           class="btn btn-default">
+            <i class="fas fa-clipboard-list"></i>
+        </a>
+        <a asp-action="Index"
+           asp-route-sortType="bydate"
+           asp-route-articlePage="@(Model.PagingInfo.CurrentPage == 0 ? 1 : Model.PagingInfo.CurrentPage)"
+           class="btn btn-default">
+            <i class="fas fa-calendar-alt"></i>
+        </a>
+        <a asp-action="Index"
+           asp-route-sortType="bylikes"
+           asp-route-articlePage="@(Model.PagingInfo.CurrentPage == 0 ? 1 : Model.PagingInfo.CurrentPage)"
+           class="btn btn-default">
+            <i class="fas fa-thumbs-up"></i>
+        </a>
+    </p>
+}
+else if (Model.SortType.ToString().ToLower().Equals("bycategory"))
+{
+    <p>
+        <a asp-action="Index"
+           asp-route-sortType="bytitle"
+           asp-route-articlePage="@(Model.PagingInfo.CurrentPage == 0 ? 1 : Model.PagingInfo.CurrentPage)"
+           class="btn btn-default">
+            <i class="fas fa-sort-alpha-down"></i>
+        </a>
+        <a asp-action="Index"
+           asp-route-sortType="bycategory"
+           asp-route-articlePage="@(Model.PagingInfo.CurrentPage == 0 ? 1 : Model.PagingInfo.CurrentPage)"
+           class="btn btn-primary">
+            <i class="fas fa-clipboard-list"></i>
+        </a>
+        <a asp-action="Index"
+           asp-route-sortType="bydate"
+           asp-route-articlePage="@(Model.PagingInfo.CurrentPage == 0 ? 1 : Model.PagingInfo.CurrentPage)"
+           class="btn btn-default">
+            <i class="fas fa-calendar-alt"></i>
+        </a>
+        <a asp-action="Index"
+           asp-route-sortType="bylikes"
+           asp-route-articlePage="@(Model.PagingInfo.CurrentPage == 0 ? 1 : Model.PagingInfo.CurrentPage)"
+           class="btn btn-default">
+            <i class="fas fa-thumbs-up"></i>
+        </a>
+    </p>
+}
+else if (Model.SortType.ToString().ToLower().Equals("bylikes"))
+{
+    <p>
+        <a asp-action="Index"
+           asp-route-sortType="bytitle"
+           asp-route-articlePage="@(Model.PagingInfo.CurrentPage == 0 ? 1 : Model.PagingInfo.CurrentPage)"
+           class="btn btn-default">
+            <i class="fas fa-sort-alpha-down"></i>
+        </a>
+        <a asp-action="Index"
+           asp-route-sortType="bycategory"
+           asp-route-articlePage="@(Model.PagingInfo.CurrentPage == 0 ? 1 : Model.PagingInfo.CurrentPage)"
+           class="btn btn-default">
+            <i class="fas fa-clipboard-list"></i>
+        </a>
+        <a asp-action="Index"
+           asp-route-sortType="bydate"
+           asp-route-articlePage="@(Model.PagingInfo.CurrentPage == 0 ? 1 : Model.PagingInfo.CurrentPage)"
+           class="btn btn-default">
+            <i class="fas fa-calendar-alt"></i>
+        </a>
+        <a asp-action="Index"
+           asp-route-sortType="bylikes"
+           asp-route-articlePage="@(Model.PagingInfo.CurrentPage == 0 ? 1 : Model.PagingInfo.CurrentPage)"
+           class="btn btn-primary">
+            <i class="fas fa-thumbs-up"></i>
+        </a>
+    </p>
+}
+
+<div>
+    <table class="table table-striped table-bordered table-hover" id="customers">
+        @foreach (var article in Model.Articles)
+        {
+            <tr>
+                <td class="col-md-1 text-center">@article.Title</td>
+                <td class="col-md-1 text-center">@article.Category</td>
+                <td class="col-md-1 text-center">@article.PublishDate.ToShortDateString()</td>
+                <td class="col-md-6 text-info">@article.Content</td>
+                <td class="col-md-1 text-center">@article.Likes <i class="fas fa-thumbs-up"></i></td>
+                <td class="text-center col-md-2">
+                    <form method="post">
+                        <a asp-action="Edit" class="btn btn-warning" asp-route-articleId="@article.Id">
+                            Edit
+                        </a>
+                        <a asp-action="Delete" class="btn btn-danger " asp-route-articleId="@article.Id">
+                            Delete
+                        </a>
+                        <input type="hidden" name="Article Id" value="@article.Id" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div>
+    <a asp-action="Create" class="btn btn-primary text-center col-md-offset-5">Create Article</a>
+</div>
+<div>
+    <div class="pagination">
+        <a asp-action="Index" asp-route-articlePage="@Math.Max(1, Model.PagingInfo.CurrentPage - 1)">&laquo;</a>
+        @for (int pageNumber = 1; pageNumber <= Model.PagingInfo.TotalPages; pageNumber++)
+        {
+            if (Model.PagingInfo.CurrentPage == pageNumber)
+            {
+                <a asp-action="Index" asp-route-articlePage="@pageNumber" class="active">@pageNumber</a>
+            }
+            else
+            {
+                <a asp-action="Index" asp-route-articlePage="@pageNumber">@pageNumber</a>
+            }
+        }
+        <a asp-action="Index" asp-route-articlePage="@Math.Min(Model.PagingInfo.CurrentPage + 1, Model.PagingInfo.TotalPages)">&raquo;</a>
+    </div>
+</div>
+
+
+

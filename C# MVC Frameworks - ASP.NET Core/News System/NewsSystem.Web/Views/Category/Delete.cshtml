@@ -1,0 +1,18 @@
+﻿@model CategoryNameModel
+
+@{
+    ViewData["Title"] = "Delete Category";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<hr />
+
+<h3>Are you sure you want to delete <font color="red">@Model.Name</font> category?</h3>
+<div>
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index" asp-route-sortType="alphadown" class="btn btn-default">Back to List</a>
+        <input asp-for="Id" type="hidden" value="@Model.Id" />
+    </form>
+</div>
